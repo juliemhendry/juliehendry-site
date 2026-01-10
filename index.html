@@ -5,42 +5,1160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julie Hendry | Transformation Pattern Recognition</title>
     <meta name="description" content="30 years of transformation experience. 6 tech waves. 5 global crises. I've seen how this ends. Let me help you avoid repeating history.">
-    
-    <!-- Fonts -->
+
+    <!-- Fonts: Inter for body, Playfair Display for headings -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           CSS RESET & BASE STYLES
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background-color: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #0d0d0d;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.0625rem;
+            color: #3d3d3d;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #0d0d0d;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* ============================================
+           LAYOUT UTILITIES
+           ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* ============================================
+           ACCENT COLOR: Warm Gold/Orange
+           ============================================ */
+        :root {
+            --accent: #c9a050;
+            --accent-light: #e8d4a8;
+            --accent-dark: #a07d30;
+            --dark: #0d0d0d;
+            --text: #3d3d3d;
+            --text-light: #6b6b6b;
+            --bg: #fafafa;
+            --bg-alt: #ffffff;
+            --border: #e5e5e5;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-dark);
+        }
+
+        .nav-cta {
+            background: var(--dark);
+            color: #fff !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: #333;
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--dark);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark);
+            border: 2px solid var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark);
+            color: #fff;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-large {
+            padding: 20px 48px;
+            font-size: 1rem;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 140px 24px 80px;
+            background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-dark);
+            margin-bottom: 24px;
+        }
+
+        .hero-headline {
+            margin-bottom: 32px;
+        }
+
+        .hero-headline em {
+            color: var(--accent-dark);
+            font-style: italic;
+        }
+
+        .hero-subhead {
+            max-width: 700px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-subhead p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .hero-insight {
+            font-size: 1.25rem !important;
+            color: var(--dark) !important;
+            padding: 24px 32px;
+            background: var(--bg-alt);
+            border-left: 4px solid var(--accent);
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .hero-credentials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .hero-credentials span {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-credentials .separator {
+            color: var(--accent);
+        }
+
+        /* ============================================
+           PATTERN TIMELINE SECTION
+           ============================================ */
+        .pattern {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .timeline-item {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 32px 24px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        .timeline-year {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 8px;
+        }
+
+        .timeline-wave {
+            display: block;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .timeline-crisis {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .timeline-current {
+            background: var(--dark);
+            border-color: var(--dark);
+        }
+
+        .timeline-current .timeline-year {
+            color: var(--accent-light);
+        }
+
+        .timeline-current .timeline-wave,
+        .timeline-current .timeline-crisis {
+            color: #fff;
+        }
+
+        .pattern-conclusion {
+            font-size: 1.25rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--dark);
+        }
+
+        .pattern-conclusion em {
+            color: var(--accent-dark);
+        }
+
+        /* ============================================
+           BARRIERS SECTION (Why 75% Fail)
+           ============================================ */
+        .failures {
+            background: var(--bg);
+        }
+
+        .section-intro {
+            font-size: 1.125rem;
+            text-align: center;
+            max-width: 650px;
+            margin: -32px auto 56px;
+        }
+
+        .barriers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 56px;
+        }
+
+        .barrier {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            padding: 40px 32px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .barrier-number {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            line-height: 1;
+        }
+
+        .barrier h3 {
+            margin-bottom: 12px;
+            padding-right: 60px;
+        }
+
+        .barrier p {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .barriers-cta {
+            font-size: 1.125rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ============================================
+           CRISIS-TESTED SECTION
+           ============================================ */
+        .crisis-tested {
+            background: var(--dark);
+            color: #fff;
+        }
+
+        .crisis-tested .section-title {
+            color: #fff;
+        }
+
+        .crisis-content {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .crisis-content p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.125rem;
+            margin-bottom: 24px;
+        }
+
+        .crisis-insight {
+            font-size: 1.375rem !important;
+            color: var(--accent-light) !important;
+            font-weight: 500;
+            margin-top: 40px;
+        }
+
+        /* ============================================
+           PROOF SECTION (Where I've Done This)
+           ============================================ */
+        .proof {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border);
+        }
+
+        .proof-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .proof-item {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .proof-stat {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 12px;
+        }
+
+        .proof-context {
+            font-size: 0.9375rem;
+            color: var(--text);
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .proof-logos {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .logos-label {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .logos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px 32px;
+        }
+
+        .logos-grid span {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            padding: 12px 24px;
+            background: var(--bg);
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial {
+            max-width: 700px;
+            margin: 0 auto 56px;
+            text-align: center;
+            padding: 48px 40px;
+            background: var(--bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .testimonial p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .proof-story {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proof-story p {
+            margin-bottom: 16px;
+        }
+
+        .proof-story em {
+            color: var(--accent-dark);
+        }
+
+        /* ============================================
+           RESOURCES SECTION (Digital Products)
+           ============================================ */
+        .resources {
+            background: linear-gradient(180deg, var(--bg) 0%, #f5f0e8 100%);
+            border-top: 1px solid var(--border);
+        }
+
+        .resources .section-title {
+            margin-bottom: 24px;
+        }
+
+        .resources-intro {
+            font-size: 1.125rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: -32px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 40px;
+            transform: rotate(45deg);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .product-type {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-dark);
+            margin-bottom: 12px;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            font-size: 0.9375rem;
+            color: var(--text);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .product-features {
+            text-align: left;
+            margin-bottom: 28px;
+            padding: 0 8px;
+        }
+
+        .product-features li {
+            font-size: 0.875rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            list-style: none;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+
+        .product-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .product-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        /* Gumroad button placeholder styling */
+        .gumroad-btn {
+            display: inline-block;
+            background: var(--dark);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .gumroad-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           AUDIT SECTION (High-Ticket Offer)
+           ============================================ */
+        .audit {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border);
+        }
+
+        .audit-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .audit-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #fff;
+            background: var(--accent-dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+        }
+
+        .audit-title {
+            margin-bottom: 16px;
+        }
+
+        .audit-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .audit-spots {
+            font-size: 0.9375rem;
+            color: var(--accent-dark);
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .audit-intro {
+            font-size: 1.125rem;
+            margin-bottom: 40px;
+        }
+
+        .audit-includes {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            padding: 40px;
+            background: var(--bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .audit-includes h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .audit-includes ul {
+            list-style: none;
+        }
+
+        .audit-includes li {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 14px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .audit-includes li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+
+        .audit-guarantee {
+            font-size: 0.9375rem;
+            color: var(--text-light);
+            margin-top: 24px;
+            font-style: italic;
+        }
+
+        /* ============================================
+           FREE CHECKLIST SECTION (Lead Magnet)
+           ============================================ */
+        .checklist {
+            background: var(--dark);
+            color: #fff;
+        }
+
+        .checklist-inner {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .checklist-title {
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .checklist-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-light);
+            margin-bottom: 24px;
+        }
+
+        .checklist-description {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.0625rem;
+            margin-bottom: 40px;
+        }
+
+        .checklist-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .checklist-form input[type="email"] {
+            flex: 1;
+            min-width: 280px;
+            padding: 16px 20px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .checklist-form input[type="email"]::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .checklist-form input[type="email"]:focus {
+            border-color: var(--accent);
+        }
+
+        .checklist-form button {
+            background: var(--accent);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .checklist-form button:hover {
+            background: var(--accent-dark);
+        }
+
+        .checklist-privacy {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.0625rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content em {
+            color: var(--accent-dark);
+        }
+
+        .about-credentials {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            font-size: 0.875rem !important;
+            color: var(--text-light) !important;
+            text-align: center;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--dark);
+            color: #fff;
+            padding: 64px 24px 32px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.375rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 32px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .footer-links a {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-copyright {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 768px) {
+            section {
+                padding: 72px 0;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+                min-height: auto;
+            }
+
+            .hero-headline {
+                font-size: 2.25rem;
+            }
+
+            .hero-insight {
+                padding: 20px 24px;
+                font-size: 1.0625rem !important;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+            }
+
+            .hero-credentials {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .hero-credentials .separator {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .barriers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .barrier {
+                padding: 32px 24px;
+            }
+
+            .barrier-number {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                padding: 40px 28px;
+            }
+
+            .audit-includes {
+                padding: 28px 24px;
+            }
+
+            .audit-price {
+                font-size: 2.5rem;
+            }
+
+            .checklist-form {
+                flex-direction: column;
+            }
+
+            .checklist-form input[type="email"],
+            .checklist-form button {
+                width: 100%;
+            }
+
+            .proof-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-stat {
+                font-size: 2.5rem;
+            }
+
+            .testimonial {
+                padding: 32px 24px;
+            }
+
+            .testimonial p {
+                font-size: 1.25rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                padding: 24px 20px;
+            }
+
+            .product-badge {
+                right: -36px;
+                font-size: 0.6875rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav>
         <div class="nav-inner">
             <a href="#" class="nav-logo">Julie Hendry</a>
             <div class="nav-links">
                 <a href="#approach">Approach</a>
                 <a href="#proof">Experience</a>
+                <a href="#resources">Resources</a>
                 <a href="#audit" class="nav-cta">Book Audit</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
     <header class="hero">
         <div class="hero-content">
             <p class="hero-eyebrow">Pattern Recognition for Transformation Leaders</p>
+
             <h1 class="hero-headline">I've Been Through This Before.<br><em>Six Times.</em></h1>
+
             <div class="hero-subhead">
                 <p>Web. Mobile. Cloud. AI. Different tech, same mistakes.</p>
                 <p>For 30 years, I've watched transformations fail—through dot-com crashes, financial crises, pandemics, wars. Then I studied psychology to understand why we keep repeating the pattern.</p>
+
                 <p class="hero-insight">The answer? <strong>We scale technology before we scale people's ability to work with it.</strong></p>
             </div>
+
             <div class="hero-ctas">
-                <a href="#audit" class="btn btn-primary">Book Your Pattern Recognition Audit</a>
-                <a href="checklist.html" class="btn btn-secondary">Get the Free Checklist</a>
+                <a href="#audit" class="btn btn-primary btn-large">Book Your Pattern Recognition Audit</a>
+                <a href="#checklist" class="btn btn-secondary btn-large">Get the Free Checklist</a>
             </div>
         </div>
+
         <div class="hero-credentials">
             <span>FBCS Fellow</span>
             <span class="separator">·</span>
@@ -50,10 +1168,13 @@
         </div>
     </header>
 
-    <!-- The Pattern Section -->
+    <!-- ============================================
+         THE PATTERN I KEEP SEEING
+         ============================================ -->
     <section class="pattern" id="approach">
-        <div class="section-inner">
+        <div class="container">
             <h2 class="section-title">The Pattern I Keep Seeing</h2>
+
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="timeline-year">1996</span>
@@ -86,16 +1207,19 @@
                     <span class="timeline-crisis">Now: Your transformation</span>
                 </div>
             </div>
+
             <p class="pattern-conclusion">Every wave. Same failures. Same reason: <em>ignoring people and ethics.</em></p>
         </div>
     </section>
 
-    <!-- Why Transformations Fail -->
+    <!-- ============================================
+         WHY 75% OF TRANSFORMATIONS FAIL
+         ============================================ -->
     <section class="failures">
-        <div class="section-inner">
+        <div class="container">
             <h2 class="section-title">Why 75% of Transformations Fail</h2>
             <p class="section-intro">It's never the technology. The tech always works eventually. It's these six psychological barriers:</p>
-            
+
             <div class="barriers-grid">
                 <div class="barrier">
                     <span class="barrier-number">01</span>
@@ -128,16 +1252,19 @@
                     <p>Process over outcomes. Rituals performed, boxes ticked, nothing actually changes.</p>
                 </div>
             </div>
-            
+
             <p class="barriers-cta">After 30 years watching this pattern, I studied psychology to understand it. Now I help you address it <em>before</em> you scale.</p>
         </div>
     </section>
 
-    <!-- Crisis Tested -->
+    <!-- ============================================
+         CRISIS-TESTED
+         ============================================ -->
     <section class="crisis-tested">
-        <div class="section-inner">
+        <div class="container">
+            <h2 class="section-title">Crisis-Tested</h2>
+
             <div class="crisis-content">
-                <h2 class="section-title">Crisis-Tested</h2>
                 <p>When the Ukraine war disrupted global supply chains in 2022, I was at Travis Perkins—keeping £4.95B in revenue flowing with 99.9% uptime across all group software operations.</p>
                 <p>That wasn't luck. It was 25 years of leading distributed teams across India, China, Canada, the US, and Europe. Through SARS. Through the 2008 crash. Through COVID.</p>
                 <p class="crisis-insight">I know how people behave under pressure. I know how to lead ethically when everything's on fire.</p>
@@ -145,11 +1272,13 @@
         </div>
     </section>
 
-    <!-- Proof Section -->
+    <!-- ============================================
+         PROOF SECTION (Where I've Done This)
+         ============================================ -->
     <section class="proof" id="proof">
-        <div class="section-inner">
+        <div class="container">
             <h2 class="section-title">Where I've Done This</h2>
-            
+
             <div class="proof-highlights">
                 <div class="proof-item">
                     <p class="proof-stat">£260M</p>
@@ -190,81 +1319,198 @@
         </div>
     </section>
 
-    <!-- The Offer -->
-    <section class="offer" id="audit">
-        <div class="section-inner">
-            <div class="offer-badge">Founding Client Rate</div>
-            <h2 class="offer-title">Pattern Recognition Audit</h2>
-            <p class="offer-price">£1,497</p>
-            <p class="offer-note">3 spots remaining at this rate</p>
-            
-            <div class="offer-details">
-                <p>This isn't a tech audit. It's a <strong>people and ethics audit</strong>.</p>
-                <ul class="offer-includes">
-                    <li>2-hour deep diagnostic session (video call)</li>
-                    <li>Psychology-informed assessment of transformation readiness</li>
-                    <li>Pattern matching: "I've seen your exact situation before"</li>
-                    <li>Identify the psychological barriers blocking your transformation</li>
-                    <li>Ethics check: Are you considering the human impact?</li>
-                    <li>10-point action plan before you scale</li>
-                    <li>Recording + written summary delivered within 48 hours</li>
-                </ul>
-            </div>
+    <!-- ============================================
+         RESOURCES SECTION (Digital Products)
+         Positioned for passive monetization visibility
+         ============================================ -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">Resources</h2>
+            <p class="resources-intro">Tools and frameworks distilled from 30 years of transformation experience. Start learning the patterns now.</p>
 
-            <a href="https://calendly.com/juliehendry" class="btn btn-primary btn-large" target="_blank">Book Your Audit Now</a>
-            
-            <p class="offer-guarantee">Not sure? Let's have a 15-minute call first. No pitch, just clarity on whether this is right for you.</p>
+            <div class="products-grid">
+                <!-- E-Book Product -->
+                <div class="product-card">
+                    <span class="product-badge">Popular</span>
+                    <div class="product-icon">📘</div>
+                    <p class="product-type">E-Book</p>
+                    <h3 class="product-title">Breaking the Pattern: The 6 Psychological Barriers in Tech Transformations</h3>
+                    <p class="product-description">A comprehensive 25+ page guide exploring why transformations fail and how to address the human factors before scaling technology.</p>
+
+                    <ul class="product-features">
+                        <li>Deep dive into each psychological barrier</li>
+                        <li>Real case studies from enterprise transformations</li>
+                        <li>Practical worksheets for self-assessment</li>
+                        <li>Ethical frameworks for responsible change</li>
+                        <li>Action plans you can implement immediately</li>
+                    </ul>
+
+                    <p class="product-price">£29 <span>one-time</span></p>
+
+                    <!-- PLACEHOLDER: Replace with actual Gumroad embed code -->
+                    <a href="https://gumroad.com/l/YOUR_EBOOK_ID" class="gumroad-btn" target="_blank" rel="noopener">Get the E-Book</a>
+                    <!-- Example Gumroad embed script (uncomment and replace ID):
+                    <script src="https://gumroad.com/js/gumroad.js"></script>
+                    <a class="gumroad-button" href="https://gumroad.com/l/YOUR_EBOOK_ID">Get the E-Book</a>
+                    -->
+                </div>
+
+                <!-- Toolkit Product -->
+                <div class="product-card">
+                    <div class="product-icon">🛠️</div>
+                    <p class="product-type">Toolkit</p>
+                    <h3 class="product-title">6 Tech Waves Mastery Pack</h3>
+                    <p class="product-description">Everything you need to diagnose and address transformation barriers in your organisation. Battle-tested templates ready to deploy.</p>
+
+                    <ul class="product-features">
+                        <li>Expanded diagnostic templates</li>
+                        <li>Full transformation readiness checklists</li>
+                        <li>Governance cheat sheets</li>
+                        <li>Stakeholder mapping frameworks</li>
+                        <li>Communication plan templates</li>
+                    </ul>
+
+                    <p class="product-price">£19 <span>one-time</span></p>
+
+                    <!-- PLACEHOLDER: Replace with actual Gumroad embed code -->
+                    <a href="https://gumroad.com/l/YOUR_TOOLKIT_ID" class="gumroad-btn" target="_blank" rel="noopener">Get the Toolkit</a>
+                    <!-- Example Gumroad embed script (uncomment and replace ID):
+                    <script src="https://gumroad.com/js/gumroad.js"></script>
+                    <a class="gumroad-button" href="https://gumroad.com/l/YOUR_TOOLKIT_ID">Get the Toolkit</a>
+                    -->
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Lead Magnet -->
+    <!-- ============================================
+         PATTERN RECOGNITION AUDIT (High-Ticket Offer)
+         Positioned after Resources for passive-first visibility
+         ============================================ -->
+    <section class="audit" id="audit">
+        <div class="container">
+            <div class="audit-inner">
+                <span class="audit-badge">Founding Client Rate</span>
+
+                <h2 class="audit-title">Pattern Recognition Audit</h2>
+
+                <p class="audit-price">£1,497</p>
+                <p class="audit-spots">3 spots remaining at this rate</p>
+
+                <p class="audit-intro">This isn't a tech audit. It's a <strong>people and ethics audit</strong>—the things that actually determine whether your transformation succeeds or joins the 75% that fail.</p>
+
+                <div class="audit-includes">
+                    <h4>What's Included</h4>
+                    <ul>
+                        <li>2-hour deep diagnostic session (video call)</li>
+                        <li>Psychology-informed assessment of transformation readiness</li>
+                        <li>Pattern matching: "I've seen your exact situation before"</li>
+                        <li>Identify the psychological barriers blocking your transformation</li>
+                        <li>Ethics check: Are you considering the human impact?</li>
+                        <li>10-point action plan before you scale</li>
+                        <li>Recording + written summary delivered within 48 hours</li>
+                    </ul>
+                </div>
+
+                <!-- PLACEHOLDER: Replace with actual Calendly link -->
+                <a href="https://calendly.com/juliehendry/pattern-recognition-audit" class="btn btn-accent btn-large" target="_blank" rel="noopener">Book Your Audit Now</a>
+
+                <p class="audit-guarantee">Not sure? Let's have a 15-minute call first. No pitch, just clarity on whether this is right for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FREE CHECKLIST (Lead Magnet)
+         ============================================ -->
     <section class="checklist" id="checklist">
-        <div class="section-inner">
-            <div class="checklist-content">
+        <div class="container">
+            <div class="checklist-inner">
                 <h2 class="checklist-title">Free: The 6 Tech Waves Checklist</h2>
                 <p class="checklist-subtitle">Which mistakes are you repeating?</p>
-                <p>A quick self-assessment based on the patterns I've seen across 30 years. Takes 5 minutes. Might save you millions.</p>
-                
-                <form class="checklist-form" action="#" method="POST">
-                    <input type="email" name="email" placeholder="Your email" required>
-                    <button type="submit" class="btn btn-primary">Send Me The Checklist</button>
+                <p class="checklist-description">A quick self-assessment based on the patterns I've seen across 30 years. Takes 5 minutes. Might save you millions.</p>
+
+                <!-- PLACEHOLDER: Replace action URL with your email service (Formspree, ConvertKit, Mailchimp, etc.) -->
+                <form class="checklist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit">Send Me The Checklist</button>
                 </form>
+
                 <p class="checklist-privacy">No spam. Unsubscribe anytime. I respect your inbox.</p>
             </div>
         </div>
     </section>
 
-    <!-- About -->
+    <!-- ============================================
+         ABOUT JULIE
+         ============================================ -->
     <section class="about">
-        <div class="section-inner">
+        <div class="container">
             <h2 class="section-title">About Julie</h2>
+
             <div class="about-content">
                 <p>My first transformation was in 1996. Insurance quotes, web to mainframe. I was 23.</p>
+
                 <p>30 years later, I'm still solving the same problems. Different technology—web, mobile, cloud, AI—same human failures.</p>
+
                 <p>I've lived and worked in India, China, Canada, the US, and across Europe. Led distributed teams on every continent. Survived every crash, crisis, pandemic, and war that's hit the industry.</p>
+
                 <p>In 2018, after yet another transformation that failed for predictable reasons, I asked myself: <em>why do we keep doing this?</em></p>
+
                 <p>So I stepped back. Studied for an MSc in Business Psychology. Graduated with distinction. Finally understood the <em>why</em> behind the patterns I'd been seeing for decades.</p>
+
                 <p>Now I help transformation leaders avoid repeating history.</p>
+
                 <p class="about-credentials">FBCS Fellow (invitation only) · FRSA Fellow · Former CEO, CyberSafe Schools · Signatory, Pause Giant AI Experiments · ForHumanity.org contributor</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
         <div class="footer-inner">
-            <div class="footer-main">
-                <p class="footer-tagline">Different tech. Same mistakes. Unless you choose otherwise.</p>
-                <div class="footer-links">
-                    <a href="https://linkedin.com/in/juliehendry" target="_blank">LinkedIn</a>
-                    <a href="mailto:juliemhendry@gmail.com">Email</a>
-                    <a href="https://calendly.com/juliehendry" target="_blank">Book a Call</a>
-                </div>
+            <p class="footer-tagline">Different tech. Same mistakes. Unless you choose otherwise.</p>
+
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/juliehendry" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:juliemhendry@gmail.com">Email</a>
+                <a href="https://calendly.com/juliehendry" target="_blank" rel="noopener">Book a Call</a>
             </div>
+
             <p class="footer-copyright">© 2025 Julie Hendry. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ============================================
+         SMOOTH SCROLL SCRIPT (Optional Enhancement)
+         ============================================ -->
+    <script>
+        // Smooth scroll for anchor links (backup for browsers without CSS scroll-behavior)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+
 </body>
 </html>
