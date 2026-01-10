@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Tech Waves Checklist | Julie Hendry</title>
+    <meta name="description" content="Which transformation mistakes are you repeating? A quick self-assessment based on 30 years of pattern recognition.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Checklist-specific styles */
+        .checklist-page {
+            min-height: 100vh;
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        .checklist-header {
+            text-align: center;
+            max-width: var(--content-width);
+            margin: 0 auto var(--space-xl);
+            padding-top: var(--space-lg);
+        }
+        
+        .checklist-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .checklist-header p {
+            font-size: 1.1rem;
+            color: var(--ink-light);
+        }
+        
+        .assessment-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .question-group {
+            margin-bottom: var(--space-lg);
+            padding: var(--space-md);
+            background: var(--paper-dark);
+            border-radius: 8px;
+        }
+        
+        .question-category {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .question {
+            margin-bottom: var(--space-md);
+        }
+        
+        .question:last-child {
+            margin-bottom: 0;
+        }
+        
+        .question label {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            cursor: pointer;
+            padding: var(--space-sm);
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+        
+        .question label:hover {
+            background: rgba(0,0,0,0.03);
+        }
+        
+        .question input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .question-text {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .assessment-submit {
+            text-align: center;
+            margin-top: var(--space-lg);
+        }
+        
+        .results-container {
+            display: none;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: var(--space-lg);
+            background: var(--paper);
+            border-radius: 8px;
+            border: 2px solid var(--accent);
+        }
+        
+        .results-container.visible {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .results-score {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .score-number {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--accent);
+        }
+        
+        .score-label {
+            font-size: 1rem;
+            color: var(--ink-light);
+        }
+        
+        .results-interpretation {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .results-interpretation h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .pattern-match {
+            padding: var(--space-md);
+            background: var(--highlight);
+            border-radius: 8px;
+            margin: var(--space-md) 0;
+        }
+        
+        .pattern-match-title {
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .results-cta {
+            text-align: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .email-gate {
+            max-width: 500px;
+            margin: var(--space-xl) auto;
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--ink);
+            color: var(--paper);
+            border-radius: 8px;
+        }
+        
+        .email-gate h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .email-gate-form {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .email-gate-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .email-gate-form button {
+            background: var(--paper);
+            color: var(--ink);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: var(--space-lg);
+            color: var(--ink-lighter);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Julie Hendry</a>
+            <div class="nav-links">
+                <a href="index.html#audit" class="nav-cta">Book Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="checklist-page">
+        <header class="checklist-header">
+            <h1>The 6 Tech Waves Checklist</h1>
+            <p>Which transformation mistakes are you repeating? Answer honestly—this is for your eyes only.</p>
+        </header>
+
+        <div class="assessment-container" id="assessment">
+            <!-- Trust & Leadership -->
+            <div class="question-group">
+                <h2 class="question-category">Trust & Leadership</h2>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q1" value="1">
+                        <span class="question-text">Our transformation has executive sponsors who regularly "go see" what's actually happening on the ground</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q2" value="1">
+                        <span class="question-text">Teams trust that leadership is being honest about the reasons for this transformation</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q3" value="1">
+                        <span class="question-text">When things go wrong, people feel safe raising concerns without fear of blame</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Skills & Capability -->
+            <div class="question-group">
+                <h2 class="question-category">Skills & Capability</h2>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q4" value="1">
+                        <span class="question-text">We've invested in training people BEFORE asking them to work differently</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q5" value="1">
+                        <span class="question-text">People aren't secretly afraid they'll be replaced or made redundant by this change</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q6" value="1">
+                        <span class="question-text">We have a clear plan for what happens to people whose roles change significantly</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Decision Making -->
+            <div class="question-group">
+                <h2 class="question-category">Decision Making</h2>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q7" value="1">
+                        <span class="question-text">Decisions are made at the right level—not too high (slow) or too low (fragmented)</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q8" value="1">
+                        <span class="question-text">We can kill or pivot failing initiatives without political consequences</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q9" value="1">
+                        <span class="question-text">The people making decisions have recent, direct exposure to the reality on the ground</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Value & Outcomes -->
+            <div class="question-group">
+                <h2 class="question-category">Value & Outcomes</h2>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q10" value="1">
+                        <span class="question-text">Everyone agrees on what "success" looks like—and it's not just hitting deadlines</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q11" value="1">
+                        <span class="question-text">We measure actual outcomes (value delivered) not just outputs (features shipped)</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q12" value="1">
+                        <span class="question-text">We regularly ask "should we still be doing this?" rather than just "how do we finish it?"</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Governance & Process -->
+            <div class="question-group">
+                <h2 class="question-category">Governance & Process</h2>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q13" value="1">
+                        <span class="question-text">Our governance exists to enable good work, not to provide cover for decision-makers</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q14" value="1">
+                        <span class="question-text">We've eliminated rituals that don't add value (meetings, reports, sign-offs)</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q15" value="1">
+                        <span class="question-text">People doing the work have genuine autonomy over HOW they achieve outcomes</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Ethics & Human Impact -->
+            <div class="question-group">
+                <h2 class="question-category">Ethics & Human Impact</h2>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q16" value="1">
+                        <span class="question-text">We've explicitly discussed the ethical implications of this transformation</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q17" value="1">
+                        <span class="question-text">We're tracking the impact on employee wellbeing, not just productivity metrics</span>
+                    </label>
+                </div>
+                
+                <div class="question">
+                    <label>
+                        <input type="checkbox" name="q18" value="1">
+                        <span class="question-text">If this transformation succeeds, we'll be proud of HOW we did it, not just THAT we did it</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="assessment-submit">
+                <button class="btn btn-primary btn-large" onclick="showResults()">See My Results</button>
+            </div>
+        </div>
+
+        <!-- Results (initially hidden) -->
+        <div class="results-container" id="results">
+            <div class="results-score">
+                <div class="score-number" id="score">0</div>
+                <div class="score-label">out of 18</div>
+            </div>
+            
+            <div class="results-interpretation" id="interpretation">
+                <!-- Dynamically populated -->
+            </div>
+            
+            <div class="pattern-match" id="pattern-match">
+                <!-- Dynamically populated -->
+            </div>
+            
+            <div class="results-cta">
+                <p>Want to address these patterns before they derail your transformation?</p>
+                <a href="index.html#audit" class="btn btn-primary">Book a Pattern Recognition Audit</a>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to main site</a>
+    </main>
+
+    <script>
+        function showResults() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const score = checkboxes.length;
+            const total = 18;
+            
+            document.getElementById('score').textContent = score;
+            
+            // Determine interpretation based on score
+            let interpretation = '';
+            let patternMatch = '';
+            
+            if (score <= 5) {
+                interpretation = `
+                    <h3>High Risk: Familiar Pattern Detected</h3>
+                    <p>I've seen this pattern before—most recently in cloud migrations circa 2015 and again during rushed COVID digital pivots. You're scaling technology without the organizational foundation to support it.</p>
+                    <p>The good news: you've spotted this early. The bad news: without intervention, I'd give this transformation a 20-30% chance of delivering meaningful value.</p>
+                `;
+                patternMatch = `
+                    <div class="pattern-match-title">This matches the pattern from:</div>
+                    <p>Early cloud migrations (2012-2015), COVID panic transformations (2020), and the current AI rush. Technology bought, vendors hired, but people left behind.</p>
+                `;
+            } else if (score <= 10) {
+                interpretation = `
+                    <h3>Moderate Risk: The "Almost" Zone</h3>
+                    <p>You've got some of the foundations in place, but there are gaps that will cause friction. This is the most common pattern I see—good intentions, partial execution, predictable problems ahead.</p>
+                    <p>The areas you haven't checked? Those are where your transformation will likely stall. It always does.</p>
+                `;
+                patternMatch = `
+                    <div class="pattern-match-title">This matches the pattern from:</div>
+                    <p>Enterprise mobile rollouts (2013-2016), "digital first" initiatives (2018-2020). Started strong, got stuck in the middle, declared victory before value was delivered.</p>
+                `;
+            } else if (score <= 14) {
+                interpretation = `
+                    <h3>Good Foundation, Watch the Gaps</h3>
+                    <p>You're doing better than 80% of transformations I've seen. The unchecked items are your risk areas—address them proactively rather than waiting for them to become problems.</p>
+                    <p>Your transformation has a genuine shot at success. Don't get complacent.</p>
+                `;
+                patternMatch = `
+                    <div class="pattern-match-title">This matches the pattern from:</div>
+                    <p>The successful GDS transformations (2012-2015), well-run platform modernizations. They worked because someone paid attention to the people, not just the tech.</p>
+                `;
+            } else {
+                interpretation = `
+                    <h3>Strong Position—But Stay Vigilant</h3>
+                    <p>If you're being honest (and only you know that), you're in rare territory. Most transformations don't score this well.</p>
+                    <p>The question now: can you maintain this through the inevitable pressure to cut corners, speed up, and "just ship it"?</p>
+                `;
+                patternMatch = `
+                    <div class="pattern-match-title">This matches the pattern from:</div>
+                    <p>The rare transformations that actually delivered lasting value—Abcam's global engineering overhaul, certain GDS services. They had the discipline to do it right.</p>
+                `;
+            }
+            
+            document.getElementById('interpretation').innerHTML = interpretation;
+            document.getElementById('pattern-match').innerHTML = patternMatch;
+            
+            // Hide assessment, show results
+            document.getElementById('assessment').style.display = 'none';
+            document.getElementById('results').classList.add('visible');
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+</body>
+</html>
