@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Julie Hendry | Interim CIO</title>
+  <meta name="description" content="Discuss interim CIO roles, consulting engagements, or Beò Lab. Available to start within two weeks.">
+  <meta property="og:title" content="Contact Julie Hendry | Interim CIO">
+  <meta property="og:description" content="Discuss interim CIO roles, consulting, or research. Available to start within two weeks.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">Julie Hendry</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Get in touch</h1>
+      <p class="lead">For boards, hiring teams, and recruiters looking to discuss interim CIO roles, consulting, or research collaboration.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container narrow">
+      <form class="contact-form" id="contact-form">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="enquiry-type">What's this about?</label>
+          <select id="enquiry-type" name="enquiry_type" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="cio-role">Interim CIO / Executive Role</option>
+            <option value="consulting">Consulting Enquiry</option>
+            <option value="beo-lab">Beò Lab</option>
+            <option value="press">Press / Speaking</option>
+            <option value="other">Something Else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Please include some context about your enquiry and what you're looking for."></textarea>
+        </div>
+
+        <button type="submit" class="btn" id="submit-btn">Send Message</button>
+        <p id="form-status" style="margin-top: 1rem; display: none;"></p>
+      </form>
+
+      <div class="mt-3">
+        <p>I read everything. I reply to things that warrant a reply. Response time depends on what I'm working on, but if your message is substantive, you'll hear back.</p>
+        <p>Alternatively: <strong>julie@juliehendry.com</strong></p>
+      </div>
+
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = document.getElementById('submit-btn');
+          var status = document.getElementById('form-status');
+          var form = this;
+
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          status.style.display = 'none';
+
+          fetch('https://formspree.io/f/mykdgbql', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function(response) {
+            if (response.ok) {
+              form.reset();
+              status.textContent = 'Message sent. Thank you.';
+              status.style.color = 'var(--accent)';
+              status.style.display = 'block';
+              btn.textContent = 'Send Message';
+              btn.disabled = false;
+            } else {
+              status.textContent = 'Something went wrong. Please email julie@juliehendry.com directly.';
+              status.style.color = '#b91c1c';
+              status.style.display = 'block';
+              btn.textContent = 'Send Message';
+              btn.disabled = false;
+            }
+          }).catch(function() {
+            status.textContent = 'Something went wrong. Please email julie@juliehendry.com directly.';
+            status.style.color = '#b91c1c';
+            status.style.display = 'block';
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+          });
+        });
+      </script>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2026 Julie Hendry</span>
+        <span><a href="privacy.html">Privacy</a> · <a href="work.html">How I work</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
