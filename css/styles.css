@@ -201,6 +201,17 @@ a:hover { color: var(--accent-light); }
 .case-highlight h4 { font-size: 1rem; margin-bottom: 0.35rem; }
 .case-highlight p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 0; }
 
+/* About Intro */
+.about-intro {
+  display: flex; align-items: center; gap: 2.5rem;
+}
+.about-photo img {
+  width: 280px; height: 280px; object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+.about-text { flex: 1; }
+
 /* Utilities */
 .mt-3 { margin-top: 2rem; }
 .mb-0 { margin-bottom: 0; }
@@ -219,6 +230,9 @@ a:hover { color: var(--accent-light); }
   .era-grid { grid-template-columns: 1fr; }
   .hero { padding: 3rem 0 2.5rem; }
   .hero h1 { font-size: 1.75rem; }
+  .about-intro { flex-direction: column; text-align: center; gap: 1.5rem; }
+  .about-photo img { width: 200px; height: 200px; margin: 0 auto; }
+  .about-text .lead { max-width: none; }
   .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 @media (max-width: 480px) {
