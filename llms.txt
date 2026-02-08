@@ -1,0 +1,31 @@
+# Julie Hendry
+
+> Interim and fractional CIO. FBCS, FRSA, MSc Psychology. Thirty years of technology transformation at scale across government, financial services, life sciences, and media.
+
+## About
+
+Julie Hendry is a technology executive with over thirty years of experience in technology transformation. She is a Fellow of the British Computer Society (FBCS), Fellow of the Royal Society of Arts (FRSA), and holds an MSc in Psychology (Distinction) from the University of Strathclyde and a BSc in Computer Studies from Glasgow Caledonian University. She has completed executive programmes at Oxford (AI), Columbia (Data Science), and MIT (Quantum Computing).
+
+She is available for interim and fractional CIO positions, taking full ownership of technology estates with direct board accountability. Her approach starts with people and organisational diagnosis before prescribing solutions.
+
+## Experience
+
+- VP Global Engineering, Abcam (life sciences unicorn, £260M revenue): architecture, delivery, engineering, and operations across UK, China, US, and EU. Unlocked double-digit growth through Oracle Cloud ERP, MuleSoft API-led architecture (50+ APIs), and AWS migration (40% cost reduction).
+- Group Director, Travis Perkins (FTSE 250): built software delivery across 200 people in UK and Ukraine. Led evacuation of 100 team members during Ukraine conflict while maintaining delivery continuity.
+- CEO, Cybersafe Schools: platform helping schools protect children online.
+- GDS, Cabinet Office: eliminated paper driving licences for 60 million users, saving £15M annually. Authored "Governance principles for agile service delivery," adopted across UK government.
+- ESFA: delivered the digital Apprenticeship Levy, saving £2.7 billion annually.
+- HMRC: agile delivery and DevOps across the £23 billion Aspire programme.
+- Earlier career across JP Morgan, BBC, Sungard, American Express, Barclays, Tesco, Sky, The Guardian, and Royal London.
+
+## Research
+
+CTO of Beò (beo.llc), a research practice focused on digital wellbeing, the attention economy, and organisational performance. Her MSc research found that "addiction" scores showed weak correlation with actual social media screen time, leading to a focus on digital flourishing rather than pathology-based approaches.
+
+## Pages
+
+- [Home](https://juliehendry.com/index.html): overview and case highlights
+- [About](https://juliehendry.com/about.html): full career timeline and credentials
+- [Work](https://juliehendry.com/work.html): services and case studies
+- [Writing](https://juliehendry.com/writing.html): selected writing on technology and organisations
+- [Contact](https://juliehendry.com/contact.html): enquiry form for interim CIO roles, consulting, and research
