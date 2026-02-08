@@ -1,5 +1,47 @@
 /* Julie Hendry - Personal Site */
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/source-serif-4-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/source-serif-4-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/source-serif-4-latin-700-normal.woff2') format('woff2');
+}
 
 :root {
   --accent: #0f766e;
@@ -34,6 +76,21 @@ h1, h2, h3, h4 {
 
 a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--accent-light); }
+
+/* Focus Visible */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Skip to Content */
+.skip-link {
+  position: absolute; top: -100%; left: 1rem;
+  padding: 0.5rem 1rem; background: var(--accent); color: white;
+  font-size: 0.85rem; font-weight: 600; border-radius: var(--radius);
+  z-index: 200;
+}
+.skip-link:focus { top: 0.5rem; color: white; }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 .narrow { max-width: 740px; }
@@ -156,7 +213,7 @@ a:hover { color: var(--accent-light); }
   background: var(--bg); transition: border-color 0.2s;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  outline: none; border-color: var(--accent);
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
 }
 .form-group textarea { min-height: 140px; resize: vertical; }
 
@@ -177,21 +234,12 @@ a:hover { color: var(--accent-light); }
   font-size: 0.9rem; color: var(--text-light); margin-top: 1rem;
 }
 
-/* Writing Meta */
-.writing-meta { font-size: 0.8rem; color: var(--text-light); margin-bottom: 1rem; }
-
 /* Footer */
 .site-footer {
   padding: 2rem 0; border-top: 1px solid var(--border);
   font-size: 0.8rem; color: var(--text-light);
 }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; }
-
-/* Section Divider */
-.section-divider {
-  width: 60px; height: 1px; background: var(--accent);
-  margin: 0 auto; opacity: 0.4;
-}
 
 /* Case Study Highlight */
 .case-highlight {
@@ -215,6 +263,7 @@ a:hover { color: var(--accent-light); }
 /* Utilities */
 .mt-3 { margin-top: 2rem; }
 .mb-0 { margin-bottom: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
 /* Mobile */
 @media (max-width: 768px) {
