@@ -44,8 +44,8 @@
 }
 
 :root {
-  --accent: #0f766e;
-  --accent-light: #14b8a6;
+  --accent: #1e293b;
+  --accent-light: #475569;
   --dark: #111827;
   --dark-mid: #1e293b;
   --text: #1f2937;
@@ -213,7 +213,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background: var(--bg); transition: border-color 0.2s;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.15);
 }
 .form-group textarea { min-height: 140px; resize: vertical; }
 
