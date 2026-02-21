@@ -1,0 +1,44 @@
+name: Sync beò Lab Notes
+
+# Runs every 6 hours and on manual trigger
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sync posts from beo.llc
+        run: python scripts/sync-writing.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet writing.html; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add writing.html
+          git commit -m "Sync beò Lab Notes from beo.llc"
+          git push
