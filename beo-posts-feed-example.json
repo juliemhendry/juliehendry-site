@@ -1,0 +1,24 @@
+{
+  "source": "beò Lab Notes",
+  "base_url": "https://beo.llc",
+  "posts": [
+    {
+      "title": "Your AI Rollout Has a Measurement Problem",
+      "date": "17 February 2026",
+      "excerpt": "You've rolled out ChatGPT Enterprise, GitHub Copilot, or Gemini across your teams. Or you're about to. Satisfaction surveys measure sentiment. Adoption dashboards measure usage. Neither measures whether AI is changing how your people think, decide, and collaborate.",
+      "path": "/blog/your-ai-rollout-has-a-measurement-problem.html"
+    },
+    {
+      "title": "Why I Stopped Chasing 'Addiction'",
+      "date": "5 February 2026",
+      "excerpt": "In 2020, I ran my MSc research convinced I'd prove everyone was addicted to their phones. The BSMAS \"addiction\" scores showed weak correlation with actual social media screen time (r = .12). The addiction framing measures psychological distress about technology. But distress isn't the same as behaviour.",
+      "path": "/blog/why-i-stopped-chasing-addiction.html"
+    },
+    {
+      "title": "From Research to Reality",
+      "date": "28 January 2026",
+      "excerpt": "Ask someone how often they check social media and they'll tell you with reasonable accuracy. Ask them whether their phone use is \"problematic\" and their answer will have almost nothing to do with how much they actually use it. That's the perception gap. And it's the reason most digital wellbeing interventions don't work.",
+      "path": "/blog/from-research-to-reality.html"
+    }
+  ]
+}
