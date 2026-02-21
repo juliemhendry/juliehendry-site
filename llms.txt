@@ -21,7 +21,7 @@ She takes on interim and fractional CIO positions, taking full ownership of tech
 
 ## Research
 
-CTO and co-founder of beò (beo.llc). Her MSc research (Hendry, 2020, n=82) found near-zero correlation between standard technology questionnaires and actual usage behaviour. beò builds on this evidence base.
+CTO and co-founder of beò (beo.llc). Her MSc research (Hendry, 2020, n=82) found that a widely used smartphone usage scale failed to predict actual device behaviour (r = .198, ns). beò builds on this evidence base.
 
 ## Pages
 
