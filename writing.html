@@ -10,6 +10,9 @@
   <meta property="og:image" content="https://juliehendry.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://juliehendry.com/writing.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://juliehendry.com/writing.html">
   <link rel="stylesheet" href="css/styles.css">
@@ -21,14 +24,16 @@
   <nav class="site-nav" role="navigation">
     <div class="nav-inner">
       <a href="index.html" class="site-name">Julie Hendry</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="const l=document.querySelector('.nav-links');l.classList.toggle('open');this.setAttribute('aria-expanded',l.classList.contains('open'))">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Work</a></li>
+        <li><a href="work.html">Track record</a></li>
+        <li><a href="board.html">Board &amp; Regulatory</a></li>
+        <li><a href="chart.html">CHART</a></li>
         <li><a href="writing.html" class="active">Writing</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -47,8 +52,15 @@
     <div class="container narrow">
 
       <article class="work-block">
+        <div class="era-label">July 2026</div>
+        <h2>The Oversight Window</h2>
+        <p>Why the EU's AI delay is the deadline that matters, and what to do with the time it has just handed you.</p>
+        <a href="the-oversight-window.html" class="work-link">Read the full article</a>
+      </article>
+
+      <article class="work-block">
         <div class="era-label">May 2026</div>
-        <h3>Discovery Extinction: The AI Risk Nobody Is Measuring</h3>
+        <h2>Discovery Extinction: The AI Risk Nobody Is Measuring</h2>
         <p>We take for granted that the pipeline of human discovery will continue. What happens to that pipeline when we hand the cognitive work to machines?</p>
         <a href="discovery-extinction.html" class="work-link">Read the full article</a>
       </article>

@@ -10,6 +10,9 @@
   <meta property="og:image" content="https://juliehendry.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://juliehendry.com/privacy.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://juliehendry.com/privacy.html">
   <link rel="stylesheet" href="css/styles.css">
@@ -21,14 +24,16 @@
   <nav class="site-nav" role="navigation">
     <div class="nav-inner">
       <a href="index.html" class="site-name">Julie Hendry</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="const l=document.querySelector('.nav-links');l.classList.toggle('open');this.setAttribute('aria-expanded',l.classList.contains('open'))">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Work</a></li>
+        <li><a href="work.html">Track record</a></li>
+        <li><a href="board.html">Board &amp; Regulatory</a></li>
+        <li><a href="chart.html">CHART</a></li>
         <li><a href="writing.html">Writing</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -47,20 +52,21 @@
     <div class="container narrow">
 
       <div class="work-block">
-        <h3>What this site collects</h3>
+        <h2>What this site collects</h2>
         <p>This site does not use cookies. There is no advertising, no pixel tracking, and no behavioural profiling.</p>
         <p>This site uses Cloudflare Web Analytics to understand aggregate visitor patterns (page views and visits). Cloudflare Web Analytics does not use cookies, does not collect personal data, does not track individual users, and is fully compliant with GDPR, CCPA, and PECR. No data is shared with third parties for advertising. For details, see Cloudflare's Web Analytics privacy documentation.</p>
-        <p>If you use the contact form, the information you submit (name, email address, enquiry type, and message) is processed by Formspree, a third-party form handling service based in the United States. Formspree acts as a data processor on my behalf. Your submission is forwarded to me by email and stored by Formspree in accordance with their privacy policy. I use this data solely to respond to your enquiry.</p>
+        <p>If you use the contact form, or send your result from the CHART self-assessment, the information you submit (name, email address, enquiry type or assessment result, and message) is processed by Formspree, a third-party form handling service based in the United States. Formspree acts as a data processor on my behalf. Your submission is forwarded to me by email and stored by Formspree in accordance with their privacy policy. I use this data solely to respond to your enquiry. The self-assessment itself runs entirely in your browser; nothing is sent unless you choose to submit the form.</p>
       </div>
 
       <div class="work-block">
-        <h3>Your rights</h3>
+        <h2>Your rights</h2>
         <p>Under UK GDPR, you have the right to access, correct, or delete any personal data I hold about you. If you've contacted me through the form and would like your data removed, email julie@juliehendry.com and I will action the request promptly.</p>
       </div>
 
       <div class="work-block" style="border-bottom: none;">
-        <h3>Changes</h3>
-        <p>This policy was last updated in February 2026. If it changes materially, the update will be noted here.</p>
+        <h2>Changes</h2>
+        <p>This policy was last updated in July 2026, to cover the CHART self-assessment form. If it changes materially, the update will be noted here.</p>
+        <p class="mb-0">Done here? <a href="index.html">Back to the homepage</a> or <a href="contact.html">get in touch</a>.</p>
       </div>
 
     </div>

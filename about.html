@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Julie Hendry | Interim CIO</title>
-  <meta name="description" content="FBCS. Treasurer, BCS Ethics Committee. MSc Psychology. Thirty years from software engineering to VP Engineering, from government transformation to interim CIO. The full story.">
+  <meta name="description" content="FBCS. Lay Member, ICAEW Regulatory Board. Treasurer, BCS ICT Ethics Specialist Group. MSc Psychology. Thirty years from software engineering to VP Engineering, from government transformation to interim CIO. The full story.">
   <meta property="og:title" content="About Julie Hendry | Interim CIO">
   <meta property="og:description" content="Thirty years of technology transformation. From Sungard and JP Morgan to GDS, Abcam, and Travis Perkins. The full story.">
   <meta property="og:image" content="https://juliehendry.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://juliehendry.com/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://juliehendry.com/about.html">
   <link rel="stylesheet" href="css/styles.css">
@@ -21,14 +24,16 @@
   <nav class="site-nav" role="navigation">
     <div class="nav-inner">
       <a href="index.html" class="site-name">Julie Hendry</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="const l=document.querySelector('.nav-links');l.classList.toggle('open');this.setAttribute('aria-expanded',l.classList.contains('open'))">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="work.html">Work</a></li>
+        <li><a href="work.html">Track record</a></li>
+        <li><a href="board.html">Board &amp; Regulatory</a></li>
+        <li><a href="chart.html">CHART</a></li>
         <li><a href="writing.html">Writing</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -43,8 +48,8 @@
           <img src="images/julie-hendry.png" alt="Julie Hendry" width="280" height="280">
         </div>
         <div class="about-text">
-          <h1>The full story, since you're asking</h1>
-          <p class="lead">I'm Julie Hendry. FBCS. Treasurer, BCS Ethics Committee. MSc in Psychology, BSc in Computer Studies. Thirty years solving organisational problems by starting with people, not process.</p>
+          <h1>The full story</h1>
+          <p class="lead">I'm Julie Hendry. FBCS. Lay Member, ICAEW Regulatory Board. Treasurer, BCS ICT Ethics Specialist Group. MSc in Psychology, BSc in Computer Studies. Thirty years of diagnosing what's actually broken before prescribing the fix.</p>
         </div>
       </div>
     </div>
@@ -84,8 +89,8 @@
       <div class="timeline-block">
         <div class="timeline-period">2018 &ndash; 2024</div>
         <h3>Executive Leadership</h3>
-        <p>As VP Engineering at Abcam (AIM-listed life sciences company, £260 million revenue), I owned delivery, engineering, and operations across the UK, China, the US, and the EU. Abcam had delivered double-digit growth for four consecutive years but was stuck entering its fifth. I created the business's first unified technology portfolio, which allowed us to identify and prioritise high-value projects that could drive modernisation of the legacy stack. That included integrating with Oracle Cloud ERP, migrating to AWS (reducing operating costs by 40%), and developing technology partnerships for the Chinese market as we built out the China IT division. Portfolio strategy, vendor partnerships, and team transformation together, not one without the others.</p>
-        <p>After completing my MSc in Psychology at the University of Strathclyde (Distinction, 2020), researching what pervasive technology does to human cognitive capability, I returned to executive delivery. At Cognizant as Director of Delivery, and then at Travis Perkins (FTSE 250), where I brought together all the group's brands under a single software delivery function for the first time, building capability across UK and Ukraine operations and managing strategic vendor partnerships. When the Ukraine conflict began, I led crisis management including the evacuation of 100 team members while maintaining delivery continuity.</p>
+        <p>As interim VP Engineering at Abcam (AIM-listed life sciences company, £260 million revenue), I owned delivery, engineering, and operations across the UK, China, the US, and the EU. Abcam had delivered double-digit growth for four consecutive years but was stuck entering its fifth. I created the business's first unified technology portfolio, which allowed us to identify and prioritise high-value projects that could drive modernisation of the legacy stack. That included integrating with Oracle Cloud ERP, migrating to AWS (reducing operating costs by 40%), and developing technology partnerships for the Chinese market as we built out the China IT division. Portfolio strategy, vendor partnerships, and team transformation together, not one without the others.</p>
+        <p>After completing my MSc in Psychology at the University of Strathclyde (Distinction, 2020), researching what pervasive technology does to human cognitive capability, I returned to executive delivery. At Cognizant as Director of Delivery, and then at Travis Perkins (FTSE 250) as interim Group Director of Software Delivery, where I brought together all the group's brands under a single software delivery function for the first time, building capability across UK and Ukraine operations and managing strategic vendor partnerships. When the Ukraine conflict began, I led crisis management including the evacuation of 100 team members while maintaining delivery continuity.</p>
         <p>As CEO of <a href="https://cybersafe.school/">Cybersafe Schools</a>, I led a platform helping schools protect children online, evolving the service from a compliance-focused Risk Protection Arrangement to a comprehensive SaaS platform.</p>
       </div>
 
@@ -93,7 +98,8 @@
         <div class="timeline-period">2025 &ndash; Present</div>
         <h3><a href="https://beo.llc">beò</a> and What Comes Next</h3>
         <p>beò is Scottish Gaelic for "alive." <a href="https://beo.llc">beò</a> is a B2B company measuring the cognitive impact of AI adoption on workforces. My MSc research (Hendry, 2020, n=82) found that a widely used smartphone usage scale failed to predict actual device behaviour (r = .198, ns). Organisations are now making the same measurement mistake with AI: satisfaction surveys tell you how people feel about Copilot or ChatGPT, not whether these tools are changing how they think. beò was built to close that gap.</p>
-        <p>The research directly informs my executive work. Understanding what AI actually does to the way people think, decide, and collaborate makes me a more credible CIO in AI transformation conversations. As CTO, I set the technical direction and the research methodology.</p>
+        <p>The research directly informs my executive work. Understanding what AI actually does to the way people think, decide, and collaborate makes me a more credible CIO in AI transformation conversations. As founder and principal, I set the technical direction and the research methodology.</p>
+        <p>In July 2026 I was appointed Lay Member (Transformation) of the ICAEW Regulatory Board, a public-interest appointment providing independent oversight of the regulation of the accountancy profession.</p>
         <p>I take on interim and fractional CIO positions: organisations that need someone to take full ownership of the technology estate, diagnose what's actually broken, and fix it. Thirty years across government, financial services, life sciences, and media have given me one clear conviction: the next generation of CIO challenges are about people and technology together, not technology alone. That's what I want to work on.</p>
       </div>
 
@@ -111,7 +117,9 @@
       </div>
       <ul class="credentials-list">
         <li><strong>Fellow of the British Computer Society (FBCS)</strong> <span class="org">Invitation-only, 2024</span></li>
-        <li><strong>Treasurer, BCS Ethics Committee</strong></li>
+        <li><strong>Lay Member (Transformation), ICAEW Regulatory Board</strong> <span class="org">Public-interest appointment, 2026</span></li>
+        <li><strong>Treasurer, BCS ICT Ethics Specialist Group</strong></li>
+        <li><strong>Member, BCS IT Leaders Forum</strong></li>
         <li><strong>Visiting Researcher</strong> <span class="org">University of Strathclyde, 2020-21</span></li>
         <li><strong>MSc Psychology (Distinction)</strong> <span class="org">University of Strathclyde</span></li>
         <li><strong>BSc Computer Studies</strong> <span class="org">Glasgow Caledonian University</span></li>

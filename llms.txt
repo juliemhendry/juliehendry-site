@@ -1,17 +1,21 @@
 # Julie Hendry
 
-> Interim and fractional CIO. FBCS. Treasurer, BCS Ethics Committee. MSc Psychology. Thirty years of technology transformation at scale across government, financial services, life sciences, and media.
+> Interim and fractional CIO. FBCS. Lay Member, ICAEW Regulatory Board. Treasurer, BCS ICT Ethics Specialist Group. MSc Psychology. Thirty years of technology transformation at scale across government, financial services, life sciences, and media.
 
 ## About
 
-Julie Hendry is a technology executive with over thirty years of experience in technology transformation. She is a Fellow of the British Computer Society (FBCS), Treasurer of the BCS Ethics Committee, and holds an MSc in Psychology (Distinction) from the University of Strathclyde and a BSc in Computer Studies from Glasgow Caledonian University. She was a Visiting Researcher at the University of Strathclyde (2020-21). She has completed executive programmes at Columbia (Data Science for Executives) and the Linux Foundation (Quantum Computing).
+Julie Hendry is a technology executive with over thirty years of experience in technology transformation. She is a Fellow of the British Computer Society (FBCS), Lay Member (Transformation) of the ICAEW Regulatory Board (public-interest appointment, 2026), Treasurer of the BCS ICT Ethics Specialist Group, a member of the BCS IT Leaders Forum, and holds an MSc in Psychology (Distinction) from the University of Strathclyde and a BSc in Computer Studies from Glasgow Caledonian University. She was a Visiting Researcher at the University of Strathclyde (2020-21). She has completed executive programmes at Columbia (Data Science for Executives) and the Linux Foundation (Quantum Computing).
 
 She takes on interim and fractional CIO positions, taking full ownership of technology estates with direct board accountability. Her approach starts with people and organisational diagnosis before prescribing solutions.
 
+She is a Lay Member (Transformation) of the ICAEW Regulatory Board, a public-interest appointment providing independent oversight of the regulation of the accountancy profession. She authored CHART, an openly published AI governance framework addressing the EU AI Act's Article 14 human-oversight obligations. The framework and a free self-assessment are public; the assessment protocol, scoring and calibration are the professional engagement. Every interim and fractional mandate she runs carries CHART.
+
+Every senior role since 2007 has been interim or fractional.
+
 ## Experience
 
-- VP Engineering, Abcam (AIM-listed life sciences company, £260M revenue): delivery, engineering, and operations across UK, China, US, and EU. Created the business's first unified technology portfolio. Integrated with Oracle Cloud ERP. AWS migration reducing operating costs by 40%. Unlocked double-digit growth after four consecutive years stalled entering a fifth.
-- Group Director of Software Delivery, Travis Perkins (FTSE 250, £4.9B revenue): unified all group brands under a single software delivery function for the first time. Led evacuation of 100 team members during Ukraine conflict while maintaining delivery continuity.
+- Interim VP Engineering, Abcam (AIM-listed life sciences company, £260M revenue): delivery, engineering, and operations across UK, China, US, and EU. Created the business's first unified technology portfolio. Integrated with Oracle Cloud ERP. AWS migration reducing operating costs by 40%. Unlocked double-digit growth after four consecutive years stalled entering a fifth.
+- Interim Group Director of Software Delivery, Travis Perkins (FTSE 250, £4.9B revenue): unified all group brands under a single software delivery function for the first time. Led evacuation of 100 team members during Ukraine conflict while maintaining delivery continuity.
 - CEO, Cybersafe Schools: evolved from compliance-focused Risk Protection Arrangement to comprehensive SaaS platform incorporating NCSC tools.
 - Director of Delivery, Cognizant (Fortune 500): Director of Delivery within the Microsoft Business Group.
 - GDS, Cabinet Office: coached the Exemplar programme teams delivering the Digital by Default strategy, including the team that replaced paper driving licence counterparts for 40 million licence holders. Authored "Governance principles for agile service delivery," adopted across UK government. Trained and coached over 200 civil servants.
@@ -21,12 +25,16 @@ She takes on interim and fractional CIO positions, taking full ownership of tech
 
 ## Research
 
-CTO and co-founder of beò (beo.llc). Her MSc research (Hendry, 2020, n=82) found that a widely used smartphone usage scale failed to predict actual device behaviour (r = .198, ns). beò builds on this evidence base.
+Founder and principal of beò (beo.llc). Author of CHART, an openly published AI governance framework for evidencing meaningful human oversight of AI systems under Article 14 of the EU AI Act, with commercial engagements through beò. The framework's five dimensions are published as a free self-assessment (https://juliehendry.com/CHART/self-assessment.html); the research foundation is "The Cognitive Impact of AI on Organisational Decision-Making: Why Human Readiness Is the Missing Layer in AI Governance" (SSRN preprint, 2026, https://doi.org/10.2139/ssrn.6786758). ORCID: https://orcid.org/0009-0007-7002-6045. Other publications: "How does social media use affect attentional bias?" (PsyArXiv, 2026, https://doi.org/10.31234/osf.io/z7yp5_v1); beò Digital Wellbeing Study (OSF, https://doi.org/10.17605/OSF.IO/QAGCJ). Her MSc research (Hendry, 2020, n=82) found that a widely used smartphone usage scale failed to predict actual device behaviour (r = .198, ns). beò builds on this evidence base.
 
 ## Pages
 
 - [Home](https://juliehendry.com/index.html): overview and case highlights
+- [Track record](https://juliehendry.com/work.html): mandate list and case studies
+- [Board & Regulatory](https://juliehendry.com/board.html): ICAEW Regulatory Board, BCS roles, standards work
+- [CHART](https://juliehendry.com/chart.html): the AI governance framework carried inside every mandate
 - [About](https://juliehendry.com/about.html): full career timeline and credentials
-- [Work](https://juliehendry.com/work.html): services and case studies
 - [Writing](https://juliehendry.com/writing.html): selected writing on technology and organisations
+- [The Oversight Window](https://juliehendry.com/the-oversight-window.html): practitioner white paper on the EU AI Act's deferred Article 14 human-oversight obligations (December 2027) and how to use the readiness window
+- [Discovery Extinction](https://juliehendry.com/discovery-extinction.html): article on the AI risk nobody is measuring
 - [Contact](https://juliehendry.com/contact.html): enquiry form for interim CIO roles, consulting, and research

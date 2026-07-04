@@ -49,7 +49,7 @@
   --dark: #111827;
   --dark-mid: #1e293b;
   --text: #1f2937;
-  --text-light: #6b7280;
+  --text-light: #4b5563;
   --bg: #ffffff;
   --bg-alt: #f8fafc;
   --border: #e5e7eb;
@@ -172,7 +172,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* Work Blocks */
 .work-block { padding: 2rem 0; border-bottom: 1px solid var(--border); }
 .work-block:last-child { border-bottom: none; }
-.work-block h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+.work-block h2, .work-block h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
 .work-link {
   display: inline-block; margin-top: 1rem;
   font-size: 0.85rem; font-weight: 600; color: var(--accent);
@@ -286,4 +286,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.5rem; }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
