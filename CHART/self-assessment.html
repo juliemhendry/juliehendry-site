@@ -1,531 +1,391 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHART Self-Assessment | Julie Hendry</title>
-<meta name="description" content="Most AI maturity models measure technology adoption. This one measures what AI does to the people. A 15-question self-assessment from Julie Hendry's CHART diagnostic.">
-<link rel="canonical" href="https://juliehendry.com/CHART/self-assessment.html">
-<meta property="og:title" content="CHART Self-Assessment | Julie Hendry">
-<meta property="og:description" content="Most AI maturity models measure technology adoption. This one measures what AI does to the people.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://juliehendry.com/CHART/self-assessment.html">
-<meta property="og:image" content="https://juliehendry.com/images/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHART Self-Assessment | Julie Hendry</title>
+  <meta name="description" content="Most AI maturity models measure technology adoption. This one measures what AI does to the people. A 15-question self-assessment from Julie Hendry's CHART diagnostic.">
+  <meta property="og:title" content="CHART Self-Assessment | Julie Hendry">
+  <meta property="og:description" content="Most AI maturity models measure technology adoption. This one measures what AI does to the people.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://juliehendry.com/CHART/self-assessment.html">
+  <meta property="og:image" content="https://juliehendry.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<style>
-  :root {
-    --ink: #1a1a1a;
-    --muted: #555;
-    --line: #d8d8d2;
-    --bg: #fafaf7;
-    --accent: #2a4d3a;
-    --accent-soft: #eaf1ec;
-    --warn: #8a3a2c;
-  }
-  * { box-sizing: border-box; }
-  body {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--ink);
-    background: var(--bg);
-    margin: 0;
-    padding: 0;
-    line-height: 1.55;
-  }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 24px 96px;
-  }
-  .site-nav {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 24px 24px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 0.92rem;
-  }
-  .site-nav .brand {
-    font-weight: 700;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
-  .site-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-  }
-  .site-nav a {
-    color: var(--muted);
-    text-decoration: none;
-  }
-  .site-nav a:hover { color: var(--accent); }
-  header {
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 28px;
-    margin-bottom: 32px;
-  }
-  header h1 {
-    font-size: 2.3rem;
-    margin: 0 0 14px;
-    letter-spacing: -0.01em;
-    line-height: 1.18;
-  }
-  header h1 .quiet {
-    color: var(--muted);
-    font-weight: normal;
-    display: block;
-    font-size: 1.6rem;
-    margin-top: 4px;
-  }
-  header .sub {
-    color: var(--ink);
-    margin: 0 0 14px;
-    font-size: 1.05rem;
-  }
-  header .creds {
-    font-size: 0.88rem;
-    color: var(--muted);
-    margin: 0;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-  }
-  header .creds a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--accent);
-  }
-  .intro {
-    border-left: 3px solid var(--accent);
-    padding: 12px 18px;
-    background: var(--accent-soft);
-    margin: 0 0 32px;
-    font-size: 1rem;
-  }
-  .intro p { margin: 0 0 10px; }
-  .intro p:last-child { margin-bottom: 0; }
-  .dimension {
-    margin-top: 40px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-  }
-  .dimension h2 {
-    font-size: 1.25rem;
-    margin: 0 0 4px;
-    color: var(--accent);
-  }
-  .dimension .desc {
-    color: var(--muted);
-    font-style: italic;
-    margin: 0 0 20px;
-    font-size: 0.95rem;
-  }
-  .q { margin: 24px 0; }
-  .q .qtext { font-weight: bold; margin: 0 0 12px; }
-  .q label {
-    display: block;
-    padding: 10px 12px;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    margin: 6px 0;
-    cursor: pointer;
-    background: #fff;
-    font-size: 0.96rem;
-    transition: background 0.12s, border-color 0.12s;
-  }
-  .q label:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-  }
-  .q input[type="radio"] {
-    margin-right: 10px;
-    accent-color: var(--accent);
-  }
-  .q input[type="radio"]:checked + span { font-weight: 600; }
-  .submit-row { margin-top: 40px; text-align: center; }
-  button {
-    font-family: inherit;
-    font-size: 1rem;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 4px;
-    cursor: pointer;
-    letter-spacing: 0.02em;
-  }
-  button:hover { background: #1d3829; }
-  button:disabled { background: #999; cursor: not-allowed; }
-  .results {
-    display: none;
-    margin-top: 40px;
-    padding: 28px;
-    background: #fff;
-    border: 1px solid var(--accent);
-    border-radius: 6px;
-  }
-  .results.shown { display: block; }
-  .results h2 { margin-top: 0; color: var(--accent); }
-  .level-badge {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    margin-bottom: 12px;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-  }
-  .count-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-    margin: 16px 0 20px;
-    font-size: 0.85rem;
-    color: var(--muted);
-    font-family: "Helvetica Neue", Arial, sans-serif;
-  }
-  .count-grid div {
-    text-align: center;
-    padding: 6px;
-    background: var(--bg);
-    border-radius: 4px;
-  }
-  .count-grid strong {
-    display: block;
-    font-size: 1.2rem;
-    color: var(--ink);
-  }
-  .next-step {
-    margin-top: 24px;
-    padding: 20px;
-    background: var(--accent-soft);
-    border-radius: 4px;
-  }
-  .next-step h3 { margin: 0 0 8px; color: var(--accent); }
-  .lead-form { margin-top: 18px; }
-  .lead-form .field { margin-bottom: 14px; }
-  .lead-form label {
-    display: block;
-    font-size: 0.88rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-  }
-  .lead-form input,
-  .lead-form textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 0.96rem;
-    background: #fff;
-  }
-  .lead-form input:focus,
-  .lead-form textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-  .lead-form textarea { min-height: 80px; resize: vertical; }
-  .form-status {
-    margin-top: 12px;
-    font-size: 0.92rem;
-    display: none;
-  }
-  .form-status.success {
-    display: block;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 14px;
-    border-radius: 4px;
-  }
-  .form-status.error {
-    display: block;
-    color: var(--warn);
-    padding: 10px 0;
-  }
-  .missing {
-    color: var(--warn);
-    text-align: center;
-    margin-top: 12px;
-    font-size: 0.92rem;
-    display: none;
-  }
-  .missing.shown { display: block; }
-  footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    font-size: 0.85rem;
-    color: var(--muted);
-    text-align: center;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-  }
-  footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--accent); }
-  footer .sep { margin: 0 6px; }
-</style>
+  <link rel="canonical" href="https://juliehendry.com/CHART/self-assessment.html">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .page-header h1 { max-width: 780px; }
+    .creds { font-size: 0.85rem; color: var(--text-light); margin-top: 1rem; max-width: 640px; }
+    .q.unanswered { border-left: 3px solid #b91c1c; padding-left: 1rem; margin-left: -1rem; border-radius: 3px 0 0 3px; }
+    .intro {
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 1rem;
+    }
+    .intro p { margin-bottom: 0.75rem; }
+    .intro p:last-child { margin-bottom: 0; }
+    .dimension { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .dimension:first-of-type { margin-top: 2rem; padding-top: 0; border-top: none; }
+    .dimension h2 { font-size: 1.3rem; margin-bottom: 0.35rem; }
+    .dimension .desc { color: var(--text-light); font-style: italic; margin-bottom: 1.25rem; font-size: 0.95rem; }
+    .q { margin: 1.5rem 0; }
+    .q .qtext { font-weight: 600; margin-bottom: 0.75rem; color: var(--dark); }
+    .q label {
+      display: block;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 0.4rem 0;
+      cursor: pointer;
+      background: var(--bg);
+      font-size: 0.92rem;
+      transition: background 0.12s, border-color 0.12s;
+    }
+    .q label:hover { background: var(--bg-alt); border-color: var(--accent); }
+    .q input[type="radio"] { margin-right: 0.6rem; accent-color: var(--accent); }
+    .q input[type="radio"]:checked + span { font-weight: 600; }
+    .submit-row { margin-top: 2.5rem; text-align: center; }
+    .missing { color: #b91c1c; text-align: center; margin-top: 0.75rem; font-size: 0.9rem; display: none; }
+    .missing.shown { display: block; }
+    .results {
+      display: none;
+      margin-top: 2.5rem;
+      padding: 1.75rem;
+      background: var(--bg);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+    }
+    .results.shown { display: block; }
+    .results h2 { margin-top: 0; font-size: 1.3rem; }
+    .level-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.25rem 0.9rem;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+    .count-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin: 1rem 0 1.25rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .count-grid div { text-align: center; padding: 0.4rem; background: var(--bg-alt); border-radius: var(--radius); }
+    .count-grid strong { display: block; font-size: 1.15rem; color: var(--dark); }
+    .next-step {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+    }
+    .next-step h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .lead-form { margin-top: 1.25rem; max-width: 520px; }
+    .form-status { margin-top: 0.75rem; font-size: 0.9rem; display: none; }
+    .form-status.success {
+      display: block;
+      color: var(--accent);
+      background: var(--bg);
+      border: 1px solid var(--accent);
+      padding: 0.85rem;
+      border-radius: var(--radius);
+    }
+    .form-status.error { display: block; color: #b91c1c; padding: 0.5rem 0; }
+    .fineprint { font-size: 0.85rem; color: var(--text-light); margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    @media (max-width: 480px) {
+      .count-grid { grid-template-columns: repeat(5, 1fr); font-size: 0.7rem; }
+    }
+  </style>
   <!-- Google Analytics with cookie consent -->
   <script src="/consent.js" defer></script>
 </head>
 <body>
-<nav class="site-nav">
-  <a class="brand" href="https://juliehendry.com/index.html">Julie Hendry</a>
-  <ul>
-    <li><a href="https://juliehendry.com/index.html">Home</a></li>
-    <li><a href="https://juliehendry.com/work.html">Track record</a></li>
-    <li><a href="https://juliehendry.com/chart.html">CHART</a></li>
-    <li><a href="https://juliehendry.com/writing.html">Writing</a></li>
-    <li><a href="https://juliehendry.com/contact.html">Contact</a></li>
-  </ul>
-</nav>
-<div class="wrap">
-  <header>
-    <h1>Most AI maturity models measure the wrong thing.<span class="quiet">This one measures what AI does to the people.</span></h1>
-    <p class="sub">A 15-question self-assessment from CHART, my diagnostic for human cognitive readiness in AI-augmented organisations. It will not give you a definitive score. It will tell you whether you should be worried.</p>
-    <p class="creds">Julie Hendry. FBCS. Treasurer, BCS ICT Ethics Specialist Group. MSc Psychology (Distinction). Thirty years across government, financial services, life sciences, retail, and media. Research: <a href="https://orcid.org/0009-0007-7002-6045" target="_blank" rel="noopener">ORCID</a>.</p>
+
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <nav class="site-nav" role="navigation">
+    <div class="nav-inner">
+      <a href="/index.html" class="site-name">Julie Hendry</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="const l=document.querySelector('.nav-links');l.classList.toggle('open');this.setAttribute('aria-expanded',l.classList.contains('open'))">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/work.html">Track record</a></li>
+        <li><a href="/board.html">Board &amp; Regulatory</a></li>
+        <li><a href="/chart.html" class="active">CHART</a></li>
+        <li><a href="/writing.html">Writing</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="content">
+
+  <header class="page-header">
+    <div class="container">
+      <p class="label" style="margin-bottom: 0.75rem;">CHART &middot; Free self-assessment</p>
+      <h1>Most AI maturity models measure the wrong thing. This one measures what AI does to the people.</h1>
+      <p class="lead">A 15-question self-assessment from CHART, my diagnostic for human cognitive readiness in AI-augmented organisations. It will not give you a definitive score. It will tell you whether you should be worried.</p>
+      <p class="creds">Julie Hendry. FBCS. Treasurer, BCS ICT Ethics Specialist Group. MSc Psychology (Distinction). Thirty years across government, financial services, life sciences, retail, and media. Research: <a href="https://orcid.org/0009-0007-7002-6045" target="_blank" rel="noopener">ORCID</a>.</p>
+    </div>
   </header>
 
-  <div class="intro">
-    <p>Self-assessment in AI governance is unreliable. Organisations consistently overstate their own readiness, which is one of the reasons CHART exists. So treat this as a directional read across five dimensions, not a definitive score.</p>
-    <p>If your answers surprise you, that is the point. For each question, pick the option that honestly describes your current reality. Not your policy. Not your intention. What is actually happening.</p>
-  </div>
+  <section class="section">
+    <div class="container narrow">
 
-  <form id="chart-form">
-    <div class="dimension">
-      <h2>1. Cognitive Readiness</h2>
-      <p class="desc">Do people in your organisation understand how AI changes the way they think, decide, and act?</p>
-
-      <div class="q" data-q="1">
-        <p class="qtext">Q1. When your people use AI recommendations in their work, do they understand what automation bias is and how it affects their judgment?</p>
-        <label><input type="radio" name="q1" value="a"><span>No. AI is treated as a tool like any other.</span></label>
-        <label><input type="radio" name="q1" value="b"><span>Some individuals are aware, but there is no organisational response.</span></label>
-        <label><input type="radio" name="q1" value="c"><span>Training covers this. People can articulate the risk.</span></label>
-        <label><input type="radio" name="q1" value="d"><span>Processes are designed to counter it, for example people form their own judgment before seeing AI advice.</span></label>
-        <label><input type="radio" name="q1" value="e"><span>We measure human-AI decision quality and iterate workflows based on findings.</span></label>
+      <div class="intro">
+        <p>Self-assessment in AI governance is unreliable. Organisations consistently overstate their own readiness, which is one of the reasons CHART exists. So treat this as a directional read across five dimensions, not a definitive score.</p>
+        <p>If your answers surprise you, that is the point. For each question, pick the option that honestly describes your current reality. Not your policy. Not your intention. What is actually happening.</p>
       </div>
 
-      <div class="q" data-q="2">
-        <p class="qtext">Q2. Has anyone in your organisation studied what happens to decision quality over the course of a day spent working alongside AI systems?</p>
-        <label><input type="radio" name="q2" value="a"><span>No.</span></label>
-        <label><input type="radio" name="q2" value="b"><span>We have anecdotal awareness that fatigue affects judgment.</span></label>
-        <label><input type="radio" name="q2" value="c"><span>We have discussed attention depletion and cognitive load in the context of AI.</span></label>
-        <label><input type="radio" name="q2" value="d"><span>We have built breaks, task rotation, or attention restoration into AI-assisted workflows.</span></label>
-        <label><input type="radio" name="q2" value="e"><span>We monitor cognitive load across work sessions and adjust accordingly.</span></label>
-      </div>
+      <form id="chart-form">
+        <div class="dimension">
+          <h2>1. Cognitive Readiness</h2>
+          <p class="desc">Do people in your organisation understand how AI changes the way they think, decide, and act?</p>
 
-      <div class="q" data-q="3">
-        <p class="qtext">Q3. If you removed the AI system tomorrow, would your people's independent judgment have been degraded by prolonged reliance on it?</p>
-        <label><input type="radio" name="q3" value="a"><span>We have never considered this.</span></label>
-        <label><input type="radio" name="q3" value="b"><span>We suspect it might be an issue but have no evidence.</span></label>
-        <label><input type="radio" name="q3" value="c"><span>We are aware of the research on AI bias inheritance and have discussed it.</span></label>
-        <label><input type="radio" name="q3" value="d"><span>We run periodic exercises where people make decisions independently of AI to maintain skill.</span></label>
-        <label><input type="radio" name="q3" value="e"><span>We measure independent decision quality over time and can demonstrate it has not degraded.</span></label>
-      </div>
-    </div>
+          <div class="q" data-q="1">
+            <p class="qtext">Q1. When your people use AI recommendations in their work, do they understand what automation bias is and how it affects their judgment?</p>
+            <label><input type="radio" name="q1" value="a"><span>No. AI is treated as a tool like any other.</span></label>
+            <label><input type="radio" name="q1" value="b"><span>Some individuals are aware, but there is no organisational response.</span></label>
+            <label><input type="radio" name="q1" value="c"><span>Training covers this. People can articulate the risk.</span></label>
+            <label><input type="radio" name="q1" value="d"><span>Processes are designed to counter it, for example people form their own judgment before seeing AI advice.</span></label>
+            <label><input type="radio" name="q1" value="e"><span>We measure human-AI decision quality and iterate workflows based on findings.</span></label>
+          </div>
 
-    <div class="dimension">
-      <h2>2. Decision Architecture</h2>
-      <p class="desc">When AI is involved in a decision, can you trace who actually decided, what the human contributed, and whether the human could meaningfully have overridden the system?</p>
+          <div class="q" data-q="2">
+            <p class="qtext">Q2. Has anyone in your organisation studied what happens to decision quality over the course of a day spent working alongside AI systems?</p>
+            <label><input type="radio" name="q2" value="a"><span>No.</span></label>
+            <label><input type="radio" name="q2" value="b"><span>We have anecdotal awareness that fatigue affects judgment.</span></label>
+            <label><input type="radio" name="q2" value="c"><span>We have discussed attention depletion and cognitive load in the context of AI.</span></label>
+            <label><input type="radio" name="q2" value="d"><span>We have built breaks, task rotation, or attention restoration into AI-assisted workflows.</span></label>
+            <label><input type="radio" name="q2" value="e"><span>We monitor cognitive load across work sessions and adjust accordingly.</span></label>
+          </div>
 
-      <div class="q" data-q="4">
-        <p class="qtext">Q4. In your AI-assisted processes, is it clear where the AI recommendation ends and the human decision begins?</p>
-        <label><input type="radio" name="q4" value="a"><span>No. It is opaque.</span></label>
-        <label><input type="radio" name="q4" value="b"><span>AI-assisted decisions are labelled, but the human role is not defined.</span></label>
-        <label><input type="radio" name="q4" value="c"><span>Decision rights are assigned. It is clear who can override and when.</span></label>
-        <label><input type="radio" name="q4" value="d"><span>Overrides happen in practice, not just in policy.</span></label>
-        <label><input type="radio" name="q4" value="e"><span>Override accuracy is measured. The architecture evolves based on outcomes.</span></label>
-      </div>
-
-      <div class="q" data-q="5">
-        <p class="qtext">Q5. Has a human in your organisation ever actually overridden an AI recommendation, and was that override respected?</p>
-        <label><input type="radio" name="q5" value="a"><span>We do not track this.</span></label>
-        <label><input type="radio" name="q5" value="b"><span>It may have happened but we have no visibility.</span></label>
-        <label><input type="radio" name="q5" value="c"><span>Overrides are possible in theory.</span></label>
-        <label><input type="radio" name="q5" value="d"><span>Yes. We have evidence of overrides, and the overriding person was supported.</span></label>
-        <label><input type="radio" name="q5" value="e"><span>We analyse override patterns to identify both unwarranted deference and unwarranted resistance.</span></label>
-      </div>
-
-      <div class="q" data-q="6">
-        <p class="qtext">Q6. Could you demonstrate to a regulator that your "human in the loop" is a cognitive reality rather than a compliance checkbox?</p>
-        <label><input type="radio" name="q6" value="a"><span>No.</span></label>
-        <label><input type="radio" name="q6" value="b"><span>We could show the policy exists.</span></label>
-        <label><input type="radio" name="q6" value="c"><span>We could show that decision rights are assigned and people understand them.</span></label>
-        <label><input type="radio" name="q6" value="d"><span>We could show evidence of humans exercising judgment, including disagreeing with AI.</span></label>
-        <label><input type="radio" name="q6" value="e"><span>We could show outcome data proving that human oversight adds measurable value to decision quality.</span></label>
-      </div>
-    </div>
-
-    <div class="dimension">
-      <h2>3. Organisational Honesty</h2>
-      <p class="desc">Does your organisation know what it does not know about its AI systems, and can it say so?</p>
-
-      <div class="q" data-q="7">
-        <p class="qtext">Q7. If you asked your board, your middle managers, and your frontline AI users the same question about your AI governance readiness, would they give the same answer?</p>
-        <label><input type="radio" name="q7" value="a"><span>We have never compared these perspectives.</span></label>
-        <label><input type="radio" name="q7" value="b"><span>Probably not, but we have not checked.</span></label>
-        <label><input type="radio" name="q7" value="c"><span>We know there is a gap and we have discussed it.</span></label>
-        <label><input type="radio" name="q7" value="d"><span>We actively seek the frontline view and surface discrepancies to leadership.</span></label>
-        <label><input type="radio" name="q7" value="e"><span>Governance assessments routinely include all three layers and the differences are reported without defensiveness.</span></label>
-      </div>
-
-      <div class="q" data-q="8">
-        <p class="qtext">Q8. When was the last time someone in your organisation said "we do not know" about an AI risk and that was treated as an acceptable answer?</p>
-        <label><input type="radio" name="q8" value="a"><span>Never. Uncertainty is not tolerated.</span></label>
-        <label><input type="radio" name="q8" value="b"><span>It happens informally but would not appear in a board paper.</span></label>
-        <label><input type="radio" name="q8" value="c"><span>It happens and is accepted without consequence.</span></label>
-        <label><input type="radio" name="q8" value="d"><span>It is actively encouraged. Near-misses are reported and analysed.</span></label>
-        <label><input type="radio" name="q8" value="e"><span>Structural mechanisms exist to protect people who surface uncertainty or dissent.</span></label>
-      </div>
-
-      <div class="q" data-q="9">
-        <p class="qtext">Q9. Does your AI risk register reflect what is actually happening, or what you wish was happening?</p>
-        <label><input type="radio" name="q9" value="a"><span>We do not have one.</span></label>
-        <label><input type="radio" name="q9" value="b"><span>It exists but probably reflects aspiration rather than reality.</span></label>
-        <label><input type="radio" name="q9" value="c"><span>It is honest. We update it when practice diverges from policy.</span></label>
-        <label><input type="radio" name="q9" value="d"><span>We test it against operational reality and correct discrepancies.</span></label>
-        <label><input type="radio" name="q9" value="e"><span>Independent audit confirms alignment between register and practice.</span></label>
-      </div>
-    </div>
-
-    <div class="dimension">
-      <h2>4. Workforce Transition</h2>
-      <p class="desc">Are people being supported through the cognitive and emotional transition that AI creates, or are they being told to adapt and left to cope?</p>
-
-      <div class="q" data-q="10">
-        <p class="qtext">Q10. Do your people believe the organisational narrative about AI ("it will augment, not replace"), or do they privately think it is nonsense?</p>
-        <label><input type="radio" name="q10" value="a"><span>We have not asked.</span></label>
-        <label><input type="radio" name="q10" value="b"><span>We suspect scepticism but have no data.</span></label>
-        <label><input type="radio" name="q10" value="c"><span>We have surfaced the gap between narrative and lived experience.</span></label>
-        <label><input type="radio" name="q10" value="d"><span>Workers affected by AI are involved in designing how it is deployed in their area.</span></label>
-        <label><input type="radio" name="q10" value="e"><span>We measure human flourishing alongside AI performance. Deployment that damages people is treated as failure.</span></label>
-      </div>
-
-      <div class="q" data-q="11">
-        <p class="qtext">Q11. Is there a difference between how your organisation manages the change (new tools, new processes) and how it supports the transition (identity, purpose, mastery)?</p>
-        <label><input type="radio" name="q11" value="a"><span>We do not distinguish between these.</span></label>
-        <label><input type="radio" name="q11" value="b"><span>We manage the change. Transition support is not something we have considered.</span></label>
-        <label><input type="radio" name="q11" value="c"><span>We recognise that transition is different from change and have begun addressing it.</span></label>
-        <label><input type="radio" name="q11" value="d"><span>People have access to genuine transition support: reskilling with time to learn, safe spaces, managers trained to recognise transition stress.</span></label>
-        <label><input type="radio" name="q11" value="e"><span>Autonomy, competence, and relatedness are explicitly considered in every AI deployment decision.</span></label>
-      </div>
-
-      <div class="q" data-q="12">
-        <p class="qtext">Q12. Would someone in a routine cognitive role in your organisation feel psychologically safe enough to say "I am worried AI will make my job redundant"?</p>
-        <label><input type="radio" name="q12" value="a"><span>No. That would be career-limiting.</span></label>
-        <label><input type="radio" name="q12" value="b"><span>They might say it to a trusted colleague but not to management.</span></label>
-        <label><input type="radio" name="q12" value="c"><span>They could say it without consequence.</span></label>
-        <label><input type="radio" name="q12" value="d"><span>Management would actively respond with support and involvement.</span></label>
-        <label><input type="radio" name="q12" value="e"><span>This kind of honest expression is expected, valued, and structurally protected.</span></label>
-      </div>
-    </div>
-
-    <div class="dimension">
-      <h2>5. Accountability Architecture</h2>
-      <p class="desc">When something goes wrong with an AI system, does your organisation know who is responsible, and would that person agree?</p>
-
-      <div class="q" data-q="13">
-        <p class="qtext">Q13. If an AI-assisted process in your organisation produced a harmful outcome tomorrow, could you name the single person who would be accountable?</p>
-        <label><input type="radio" name="q13" value="a"><span>No. Responsibility is distributed across teams and committees.</span></label>
-        <label><input type="radio" name="q13" value="b"><span>We could name someone on paper, but they might not agree or have the authority.</span></label>
-        <label><input type="radio" name="q13" value="c"><span>The named person has the authority, budget, and access to govern the system.</span></label>
-        <label><input type="radio" name="q13" value="d"><span>That person has already intervened under pressure, and the organisation supported them.</span></label>
-        <label><input type="radio" name="q13" value="e"><span>Accountability is structural. Incentives, reporting lines, and escalation paths make it the path of least resistance.</span></label>
-      </div>
-
-      <div class="q" data-q="14">
-        <p class="qtext">Q14. When an AI system fails in your organisation, do you investigate for systemic causes or blame an individual?</p>
-        <label><input type="radio" name="q14" value="a"><span>We blame someone.</span></label>
-        <label><input type="radio" name="q14" value="b"><span>We investigate but tend to find the nearest person to hold responsible.</span></label>
-        <label><input type="radio" name="q14" value="c"><span>We understand the principle of systemic investigation but do not always follow it.</span></label>
-        <label><input type="radio" name="q14" value="d"><span>We investigate systemically. Honest error reporting is encouraged.</span></label>
-        <label><input type="radio" name="q14" value="e"><span>Just culture principles are embedded. Ownership, escalation, override, and audit responsibilities are all clearly assigned and tested.</span></label>
-      </div>
-
-      <div class="q" data-q="15">
-        <p class="qtext">Q15. Do your people who report AI governance concerns get protected or punished?</p>
-        <label><input type="radio" name="q15" value="a"><span>They would be punished, formally or informally.</span></label>
-        <label><input type="radio" name="q15" value="b"><span>It depends who they are and what they report.</span></label>
-        <label><input type="radio" name="q15" value="c"><span>They are not punished, but nothing happens.</span></label>
-        <label><input type="radio" name="q15" value="d"><span>They are protected and the concern is investigated.</span></label>
-        <label><input type="radio" name="q15" value="e"><span>Reporting is structurally incentivised. The organisation actively looks for what it is getting wrong.</span></label>
-      </div>
-    </div>
-
-    <div class="submit-row">
-      <button type="button" id="submit-btn">See my result</button>
-      <p class="missing" id="missing-msg">Please answer all 15 questions before submitting.</p>
-    </div>
-  </form>
-
-  <div class="results" id="results">
-    <h2>Your result</h2>
-    <span class="level-badge" id="level-badge">Level X</span>
-    <p id="level-text"></p>
-
-    <div class="count-grid" id="count-grid"></div>
-
-    <p id="level-interp"></p>
-
-    <div class="next-step">
-      <h3>Want the full picture?</h3>
-      <p>The self-assessment is a lead indicator. It tells you roughly where you sit. It cannot tell you whether your answers reflect reality, how the five dimensions interact in your context, or what to fix first. That requires an external diagnostic.</p>
-      <p>Send your result through and I will reply within two working days with a short read of what it means for your organisation and how a full diagnostic would work.</p>
-
-      <!-- Uses the same Formspree form as contact.html; submissions arrive with subject "CHART self-assessment: Level N". Split into a dedicated form if volume justifies it. -->
-      <form class="lead-form" id="lead-form" action="https://formspree.io/f/mykdgbql" method="POST">
-        <div class="field">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="org">Organisation and role (optional)</label>
-          <input type="text" id="org" name="organisation" autocomplete="organization">
-        </div>
-        <div class="field">
-          <label for="context">Anything you want me to know? (optional)</label>
-          <textarea id="context" name="context" placeholder="Sector, scale, what prompted you to take this..."></textarea>
-        </div>
-        <div class="field">
-          <label for="updates-opt-in" style="font-weight: normal; cursor: pointer;">
-            <input type="checkbox" id="updates-opt-in" name="updates_opt_in" value="yes" style="width: auto; margin-right: 8px; accent-color: var(--accent);">
-            Send me occasional related research and updates (you can unsubscribe any time)
-          </label>
+          <div class="q" data-q="3">
+            <p class="qtext">Q3. If you removed the AI system tomorrow, would your people's independent judgment have been degraded by prolonged reliance on it?</p>
+            <label><input type="radio" name="q3" value="a"><span>We have never considered this.</span></label>
+            <label><input type="radio" name="q3" value="b"><span>We suspect it might be an issue but have no evidence.</span></label>
+            <label><input type="radio" name="q3" value="c"><span>We are aware of the research on AI bias inheritance and have discussed it.</span></label>
+            <label><input type="radio" name="q3" value="d"><span>We run periodic exercises where people make decisions independently of AI to maintain skill.</span></label>
+            <label><input type="radio" name="q3" value="e"><span>We measure independent decision quality over time and can demonstrate it has not degraded.</span></label>
+          </div>
         </div>
 
-        <input type="hidden" name="result_level" id="hidden-level">
-        <input type="hidden" name="result_distribution" id="hidden-distribution">
-        <input type="hidden" name="result_answers" id="hidden-answers">
-        <input type="hidden" name="_subject" id="hidden-subject" value="CHART self-assessment submission">
+        <div class="dimension">
+          <h2>2. Decision Architecture</h2>
+          <p class="desc">When AI is involved in a decision, can you trace who actually decided, what the human contributed, and whether the human could meaningfully have overridden the system?</p>
 
-        <div style="text-align: center; margin-top: 16px;">
-          <button type="submit" id="lead-submit">Send my result to Julie</button>
+          <div class="q" data-q="4">
+            <p class="qtext">Q4. In your AI-assisted processes, is it clear where the AI recommendation ends and the human decision begins?</p>
+            <label><input type="radio" name="q4" value="a"><span>No. It is opaque.</span></label>
+            <label><input type="radio" name="q4" value="b"><span>AI-assisted decisions are labelled, but the human role is not defined.</span></label>
+            <label><input type="radio" name="q4" value="c"><span>Decision rights are assigned. It is clear who can override and when.</span></label>
+            <label><input type="radio" name="q4" value="d"><span>Overrides happen in practice, not just in policy.</span></label>
+            <label><input type="radio" name="q4" value="e"><span>Override accuracy is measured. The architecture evolves based on outcomes.</span></label>
+          </div>
+
+          <div class="q" data-q="5">
+            <p class="qtext">Q5. Has a human in your organisation ever actually overridden an AI recommendation, and was that override respected?</p>
+            <label><input type="radio" name="q5" value="a"><span>We do not track this.</span></label>
+            <label><input type="radio" name="q5" value="b"><span>It may have happened but we have no visibility.</span></label>
+            <label><input type="radio" name="q5" value="c"><span>Overrides are possible in theory.</span></label>
+            <label><input type="radio" name="q5" value="d"><span>Yes. We have evidence of overrides, and the overriding person was supported.</span></label>
+            <label><input type="radio" name="q5" value="e"><span>We analyse override patterns to identify both unwarranted deference and unwarranted resistance.</span></label>
+          </div>
+
+          <div class="q" data-q="6">
+            <p class="qtext">Q6. Could you demonstrate to a regulator that your "human in the loop" is a cognitive reality rather than a compliance checkbox?</p>
+            <label><input type="radio" name="q6" value="a"><span>No.</span></label>
+            <label><input type="radio" name="q6" value="b"><span>We could show the policy exists.</span></label>
+            <label><input type="radio" name="q6" value="c"><span>We could show that decision rights are assigned and people understand them.</span></label>
+            <label><input type="radio" name="q6" value="d"><span>We could show evidence of humans exercising judgment, including disagreeing with AI.</span></label>
+            <label><input type="radio" name="q6" value="e"><span>We could show outcome data proving that human oversight adds measurable value to decision quality.</span></label>
+          </div>
         </div>
 
-        <div class="form-status" id="form-status"></div>
+        <div class="dimension">
+          <h2>3. Organisational Honesty</h2>
+          <p class="desc">Does your organisation know what it does not know about its AI systems, and can it say so?</p>
+
+          <div class="q" data-q="7">
+            <p class="qtext">Q7. If you asked your board, your middle managers, and your frontline AI users the same question about your AI governance readiness, would they give the same answer?</p>
+            <label><input type="radio" name="q7" value="a"><span>We have never compared these perspectives.</span></label>
+            <label><input type="radio" name="q7" value="b"><span>Probably not, but we have not checked.</span></label>
+            <label><input type="radio" name="q7" value="c"><span>We know there is a gap and we have discussed it.</span></label>
+            <label><input type="radio" name="q7" value="d"><span>We actively seek the frontline view and surface discrepancies to leadership.</span></label>
+            <label><input type="radio" name="q7" value="e"><span>Governance assessments routinely include all three layers and the differences are reported without defensiveness.</span></label>
+          </div>
+
+          <div class="q" data-q="8">
+            <p class="qtext">Q8. When was the last time someone in your organisation said "we do not know" about an AI risk and that was treated as an acceptable answer?</p>
+            <label><input type="radio" name="q8" value="a"><span>Never. Uncertainty is not tolerated.</span></label>
+            <label><input type="radio" name="q8" value="b"><span>It happens informally but would not appear in a board paper.</span></label>
+            <label><input type="radio" name="q8" value="c"><span>It happens and is accepted without consequence.</span></label>
+            <label><input type="radio" name="q8" value="d"><span>It is actively encouraged. Near-misses are reported and analysed.</span></label>
+            <label><input type="radio" name="q8" value="e"><span>Structural mechanisms exist to protect people who surface uncertainty or dissent.</span></label>
+          </div>
+
+          <div class="q" data-q="9">
+            <p class="qtext">Q9. Does your AI risk register reflect what is actually happening, or what you wish was happening?</p>
+            <label><input type="radio" name="q9" value="a"><span>We do not have one.</span></label>
+            <label><input type="radio" name="q9" value="b"><span>It exists but probably reflects aspiration rather than reality.</span></label>
+            <label><input type="radio" name="q9" value="c"><span>It is honest. We update it when practice diverges from policy.</span></label>
+            <label><input type="radio" name="q9" value="d"><span>We test it against operational reality and correct discrepancies.</span></label>
+            <label><input type="radio" name="q9" value="e"><span>Independent audit confirms alignment between register and practice.</span></label>
+          </div>
+        </div>
+
+        <div class="dimension">
+          <h2>4. Workforce Transition</h2>
+          <p class="desc">Are people being supported through the cognitive and emotional transition that AI creates, or are they being told to adapt and left to cope?</p>
+
+          <div class="q" data-q="10">
+            <p class="qtext">Q10. Do your people believe the organisational narrative about AI ("it will augment, not replace"), or do they privately think it is nonsense?</p>
+            <label><input type="radio" name="q10" value="a"><span>We have not asked.</span></label>
+            <label><input type="radio" name="q10" value="b"><span>We suspect scepticism but have no data.</span></label>
+            <label><input type="radio" name="q10" value="c"><span>We have surfaced the gap between narrative and lived experience.</span></label>
+            <label><input type="radio" name="q10" value="d"><span>Workers affected by AI are involved in designing how it is deployed in their area.</span></label>
+            <label><input type="radio" name="q10" value="e"><span>We measure human flourishing alongside AI performance. Deployment that damages people is treated as failure.</span></label>
+          </div>
+
+          <div class="q" data-q="11">
+            <p class="qtext">Q11. Is there a difference between how your organisation manages the change (new tools, new processes) and how it supports the transition (identity, purpose, mastery)?</p>
+            <label><input type="radio" name="q11" value="a"><span>We do not distinguish between these.</span></label>
+            <label><input type="radio" name="q11" value="b"><span>We manage the change. Transition support is not something we have considered.</span></label>
+            <label><input type="radio" name="q11" value="c"><span>We recognise that transition is different from change and have begun addressing it.</span></label>
+            <label><input type="radio" name="q11" value="d"><span>People have access to genuine transition support: reskilling with time to learn, safe spaces, managers trained to recognise transition stress.</span></label>
+            <label><input type="radio" name="q11" value="e"><span>Autonomy, competence, and relatedness are explicitly considered in every AI deployment decision.</span></label>
+          </div>
+
+          <div class="q" data-q="12">
+            <p class="qtext">Q12. Would someone in a routine cognitive role in your organisation feel psychologically safe enough to say "I am worried AI will make my job redundant"?</p>
+            <label><input type="radio" name="q12" value="a"><span>No. That would be career-limiting.</span></label>
+            <label><input type="radio" name="q12" value="b"><span>They might say it to a trusted colleague but not to management.</span></label>
+            <label><input type="radio" name="q12" value="c"><span>They could say it without consequence.</span></label>
+            <label><input type="radio" name="q12" value="d"><span>Management would actively respond with support and involvement.</span></label>
+            <label><input type="radio" name="q12" value="e"><span>This kind of honest expression is expected, valued, and structurally protected.</span></label>
+          </div>
+        </div>
+
+        <div class="dimension">
+          <h2>5. Accountability Architecture</h2>
+          <p class="desc">When something goes wrong with an AI system, does your organisation know who is responsible, and would that person agree?</p>
+
+          <div class="q" data-q="13">
+            <p class="qtext">Q13. If an AI-assisted process in your organisation produced a harmful outcome tomorrow, could you name the single person who would be accountable?</p>
+            <label><input type="radio" name="q13" value="a"><span>No. Responsibility is distributed across teams and committees.</span></label>
+            <label><input type="radio" name="q13" value="b"><span>We could name someone on paper, but they might not agree or have the authority.</span></label>
+            <label><input type="radio" name="q13" value="c"><span>The named person has the authority, budget, and access to govern the system.</span></label>
+            <label><input type="radio" name="q13" value="d"><span>That person has already intervened under pressure, and the organisation supported them.</span></label>
+            <label><input type="radio" name="q13" value="e"><span>Accountability is structural. Incentives, reporting lines, and escalation paths make it the path of least resistance.</span></label>
+          </div>
+
+          <div class="q" data-q="14">
+            <p class="qtext">Q14. When an AI system fails in your organisation, do you investigate for systemic causes or blame an individual?</p>
+            <label><input type="radio" name="q14" value="a"><span>We blame someone.</span></label>
+            <label><input type="radio" name="q14" value="b"><span>We investigate but tend to find the nearest person to hold responsible.</span></label>
+            <label><input type="radio" name="q14" value="c"><span>We understand the principle of systemic investigation but do not always follow it.</span></label>
+            <label><input type="radio" name="q14" value="d"><span>We investigate systemically. Honest error reporting is encouraged.</span></label>
+            <label><input type="radio" name="q14" value="e"><span>Just culture principles are embedded. Ownership, escalation, override, and audit responsibilities are all clearly assigned and tested.</span></label>
+          </div>
+
+          <div class="q" data-q="15">
+            <p class="qtext">Q15. Do your people who report AI governance concerns get protected or punished?</p>
+            <label><input type="radio" name="q15" value="a"><span>They would be punished, formally or informally.</span></label>
+            <label><input type="radio" name="q15" value="b"><span>It depends who they are and what they report.</span></label>
+            <label><input type="radio" name="q15" value="c"><span>They are not punished, but nothing happens.</span></label>
+            <label><input type="radio" name="q15" value="d"><span>They are protected and the concern is investigated.</span></label>
+            <label><input type="radio" name="q15" value="e"><span>Reporting is structurally incentivised. The organisation actively looks for what it is getting wrong.</span></label>
+          </div>
+        </div>
+
+        <div class="submit-row">
+          <button type="button" class="btn" id="submit-btn">See my result</button>
+          <p class="missing" id="missing-msg">Please answer all 15 questions before submitting.</p>
+        </div>
       </form>
-    </div>
-  </div>
 
-  <footer>
-    <p>CHART (Cognitive Health Assessment for Responsible Technology) is the work of Julie Hendry. The self-assessment is free. The full diagnostic is a professional engagement.</p>
-    <p>&copy; 2026 Julie Hendry <span class="sep">&middot;</span> <a href="https://juliehendry.com/privacy.html">Privacy</a> <span class="sep">&middot;</span> <a href="https://www.linkedin.com/in/juliehendry/" target="_blank" rel="noopener">LinkedIn</a> <span class="sep">&middot;</span> <a href="https://juliehendry.com/contact.html">Let's talk</a></p>
+      <div class="results" id="results">
+        <h2>Your result</h2>
+        <span class="level-badge" id="level-badge">Level X</span>
+        <p id="level-text"></p>
+
+        <div class="count-grid" id="count-grid"></div>
+
+        <p id="level-interp"></p>
+
+        <div class="next-step">
+          <h3>Want the full picture?</h3>
+          <p>The self-assessment is a lead indicator. It tells you roughly where you sit. It cannot tell you whether your answers reflect reality, how the five dimensions interact in your context, or what to fix first. That requires an external diagnostic.</p>
+          <p>Send your result through and I will reply within two working days with a short read of what it means for your organisation and how a full diagnostic would work.</p>
+
+          <!-- Uses the same Formspree form as contact.html; submissions arrive with subject "CHART self-assessment: Level N". Split into a dedicated form if volume justifies it. -->
+          <form class="lead-form" id="lead-form" action="https://formspree.io/f/mykdgbql" method="POST">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="org">Organisation and role (optional)</label>
+              <input type="text" id="org" name="organisation" autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label for="context">Anything you want me to know? (optional)</label>
+              <textarea id="context" name="context" placeholder="Sector, scale, what prompted you to take this..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="updates-opt-in" style="font-weight: normal; cursor: pointer;">
+                <input type="checkbox" id="updates-opt-in" name="updates_opt_in" value="yes" style="width: auto; margin-right: 8px; accent-color: var(--accent);">
+                Send me occasional related research and updates (you can unsubscribe any time)
+              </label>
+            </div>
+
+            <input type="hidden" name="result_level" id="hidden-level">
+            <input type="hidden" name="result_distribution" id="hidden-distribution">
+            <input type="hidden" name="result_answers" id="hidden-answers">
+            <input type="hidden" name="_subject" id="hidden-subject" value="CHART self-assessment submission">
+
+            <button type="submit" class="btn" id="lead-submit">Send my result to Julie</button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+      </div>
+
+      <p class="fineprint">CHART (Cognitive Health Assessment for Responsible Technology) is the work of Julie Hendry. The self-assessment is free. The full diagnostic is a professional engagement. <a href="/chart.html">About CHART</a>.</p>
+
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2026 Julie Hendry</span>
+        <span><a href="/privacy.html">Privacy</a> &middot; <a href="https://www.linkedin.com/in/juliehendry/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="/contact.html">Let's talk</a></span>
+      </div>
+    </div>
   </footer>
-</div>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "81084ceafb55402ead83aefb2e03347b"}'></script><!-- End Cloudflare Web Analytics -->
 
 <script>
 const interpretations = {
@@ -552,8 +412,22 @@ document.getElementById('submit-btn').addEventListener('click', function() {
     }
   }
 
+  document.querySelectorAll('.q.unanswered').forEach(el => el.classList.remove('unanswered'));
   if (answered < 15) {
-    document.getElementById('missing-msg').classList.add('shown');
+    const missing = [];
+    for (let i = 1; i <= 15; i++) {
+      if (!answers['q' + i]) {
+        const q = document.querySelector('.q[data-q="' + i + '"]');
+        q.classList.add('unanswered');
+        missing.push(q);
+      }
+    }
+    const msg = document.getElementById('missing-msg');
+    msg.textContent = missing.length === 1
+      ? 'One question still needs an answer. It is marked in red above.'
+      : missing.length + ' questions still need an answer. They are marked in red above.';
+    msg.classList.add('shown');
+    missing[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
   document.getElementById('missing-msg').classList.remove('shown');
@@ -641,5 +515,6 @@ document.getElementById('lead-form').addEventListener('submit', async function(e
   }
 });
 </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "81084ceafb55402ead83aefb2e03347b"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
