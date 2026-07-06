@@ -8,7 +8,7 @@ Julie Hendry is a technology executive with over thirty years of experience in t
 
 She takes on interim and fractional CIO positions, taking full ownership of technology estates with direct board accountability. Her approach starts with people and organisational diagnosis before prescribing solutions.
 
-She is a Lay Member (Transformation) of the ICAEW Regulatory Board, a public-interest appointment providing independent oversight of the regulation of the accountancy profession. She authored CHART, an openly published AI governance framework addressing the EU AI Act's Article 14 human-oversight obligations. The framework and a free self-assessment are public; the assessment protocol, scoring and calibration are the professional engagement. Every interim and fractional mandate she runs carries CHART.
+She is a Lay Member (Transformation) of the ICAEW Regulatory Board, a public-interest appointment providing independent oversight of the regulation of the accountancy profession. She authored CHART, an openly published AI governance framework addressing the EU AI Act's Article 14 human-oversight obligations. The framework and a free self-assessment are public; the assessment protocol, scoring and calibration are the professional engagement. She brings CHART to interim and fractional mandates where AI governance is in scope; commercial engagements run through beò, separately from her interim practice.
 
 Every senior role since 2007 has been interim or fractional.
 
@@ -32,7 +32,7 @@ Founder and principal of beò (beo.llc). Author of CHART, an openly published AI
 - [Home](https://juliehendry.com/index.html): overview and case highlights
 - [Track record](https://juliehendry.com/work.html): mandate list and case studies
 - [Board & Regulatory](https://juliehendry.com/board.html): ICAEW Regulatory Board, BCS roles, standards work
-- [CHART](https://juliehendry.com/chart.html): the AI governance framework carried inside every mandate
+- [CHART](https://juliehendry.com/chart.html): the AI governance framework she brings to mandates that need it
 - [About](https://juliehendry.com/about.html): full career timeline and credentials
 - [Writing](https://juliehendry.com/writing.html): selected writing on technology and organisations
 - [The Oversight Window](https://juliehendry.com/the-oversight-window.html): practitioner white paper on the EU AI Act's deferred Article 14 human-oversight obligations (December 2027) and how to use the readiness window
