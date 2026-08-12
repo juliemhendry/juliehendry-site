@@ -334,8 +334,11 @@
           <p>The self-assessment is a lead indicator. It tells you roughly where you sit. It cannot tell you whether your answers reflect reality, how the five dimensions interact in your context, or what to fix first. That requires an external diagnostic.</p>
           <p>Send your result through and I will reply within two working days with a short read of what it means for your organisation and how a full diagnostic would work.</p>
 
-          <!-- Uses the same Formspree form as contact.html; submissions arrive with subject "CHART self-assessment: Level N". Split into a dedicated form if volume justifies it. -->
-          <form class="lead-form" id="lead-form" action="https://formspree.io/f/mykdgbql" method="POST">
+          <!-- Uses the same Web3Forms endpoint as contact.html; submissions arrive with subject "CHART self-assessment: Level N". Split into a dedicated form if volume justifies it. -->
+          <form class="lead-form" id="lead-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="28f05112-1eac-4cfd-8ae4-8f5f28ce2c65">
+            <!-- Honeypot: real people leave this empty; bots fill it and get silently rejected. -->
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-group">
               <label for="name">Your name</label>
               <input type="text" id="name" name="name" required autocomplete="name">
@@ -362,7 +365,8 @@
             <input type="hidden" name="result_level" id="hidden-level">
             <input type="hidden" name="result_distribution" id="hidden-distribution">
             <input type="hidden" name="result_answers" id="hidden-answers">
-            <input type="hidden" name="_subject" id="hidden-subject" value="CHART self-assessment submission">
+            <input type="hidden" name="subject" id="hidden-subject" value="CHART self-assessment submission">
+            <input type="hidden" name="from_name" value="Julie Hendry website">
 
             <button type="submit" class="btn" id="lead-submit">Send my result to Julie</button>
 
@@ -493,26 +497,17 @@ document.getElementById('lead-form').addEventListener('submit', async function(e
       headers: { 'Accept': 'application/json' }
     });
 
-    if (response.ok) {
+    // Web3Forms is the source of truth via the "success" flag in the JSON body.
+    let result = {};
+    try { result = await response.json(); } catch (_) { /* keep {} */ }
+
+    if (result.success) {
       form.style.display = 'none';
       status.className = 'form-status success';
       status.innerHTML = '<strong>Got it.</strong> Your result is on its way to Julie. Expect a reply within two working days.';
     } else {
-      // Surface Formspree's actual reason. Field validation comes back as an
-      // "errors" array; account/quota problems (limit reached, form paused,
-      // reCAPTCHA required) come back as a singular "error" string. Fall back
-      // to a generic message only if the body isn't the JSON we expect.
-      let msg = 'Something went wrong. Please email julie@juliehendry.com directly.';
-      try {
-        const result = await response.json();
-        if (result.errors && result.errors.length) {
-          msg = result.errors.map(e => e.message).join(', ');
-        } else if (result.error) {
-          msg = result.error;
-        }
-      } catch (_) { /* non-JSON response; keep the generic message */ }
       status.className = 'form-status error';
-      status.textContent = msg;
+      status.textContent = result.message || 'Something went wrong. Please email julie@juliehendry.com directly.';
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send my result to Julie';
     }

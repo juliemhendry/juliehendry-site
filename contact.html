@@ -52,7 +52,12 @@
 
   <section class="section">
     <div class="container narrow">
-      <form class="contact-form" id="contact-form">
+      <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="28f05112-1eac-4cfd-8ae4-8f5f28ce2c65">
+        <input type="hidden" name="subject" value="New enquiry from juliehendry.com">
+        <input type="hidden" name="from_name" value="Julie Hendry website">
+        <!-- Honeypot: real people leave this empty; bots fill it and get silently rejected. -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="form-group">
           <label for="name">Name</label>
@@ -102,12 +107,15 @@
           btn.textContent = 'Sending...';
           status.style.display = 'none';
 
-          fetch('https://formspree.io/f/mykdgbql', {
+          fetch(form.action, {
             method: 'POST',
             body: new FormData(form),
             headers: { 'Accept': 'application/json' }
           }).then(function(response) {
-            if (response.ok) {
+            return response.json().catch(function() { return {}; });
+          }).then(function(result) {
+            // Web3Forms is the source of truth via the "success" flag.
+            if (result.success) {
               form.reset();
               status.textContent = 'Message sent. Thank you.';
               status.style.color = 'var(--accent)';
@@ -116,22 +124,11 @@
               btn.disabled = false;
               return;
             }
-            // Surface Formspree's actual reason (field "errors" array, or a
-            // singular account/quota "error" string) instead of a blanket
-            // "something went wrong".
-            return response.json().then(function(result) {
-              var msg = 'Something went wrong. Please email julie@juliehendry.com directly.';
-              if (result.errors && result.errors.length) {
-                msg = result.errors.map(function(e) { return e.message; }).join(', ');
-              } else if (result.error) {
-                msg = result.error;
-              }
-              status.textContent = msg;
-              status.style.color = '#b91c1c';
-              status.style.display = 'block';
-              btn.textContent = 'Send Message';
-              btn.disabled = false;
-            });
+            status.textContent = result.message || 'Something went wrong. Please email julie@juliehendry.com directly.';
+            status.style.color = '#b91c1c';
+            status.style.display = 'block';
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
           }).catch(function() {
             status.textContent = 'Something went wrong. Please email julie@juliehendry.com directly.';
             status.style.color = '#b91c1c';
