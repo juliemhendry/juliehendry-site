@@ -114,13 +114,24 @@
               status.style.display = 'block';
               btn.textContent = 'Send Message';
               btn.disabled = false;
-            } else {
-              status.textContent = 'Something went wrong. Please email julie@juliehendry.com directly.';
+              return;
+            }
+            // Surface Formspree's actual reason (field "errors" array, or a
+            // singular account/quota "error" string) instead of a blanket
+            // "something went wrong".
+            return response.json().then(function(result) {
+              var msg = 'Something went wrong. Please email julie@juliehendry.com directly.';
+              if (result.errors && result.errors.length) {
+                msg = result.errors.map(function(e) { return e.message; }).join(', ');
+              } else if (result.error) {
+                msg = result.error;
+              }
+              status.textContent = msg;
               status.style.color = '#b91c1c';
               status.style.display = 'block';
               btn.textContent = 'Send Message';
               btn.disabled = false;
-            }
+            });
           }).catch(function() {
             status.textContent = 'Something went wrong. Please email julie@juliehendry.com directly.';
             status.style.color = '#b91c1c';

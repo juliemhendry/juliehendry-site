@@ -498,10 +498,19 @@ document.getElementById('lead-form').addEventListener('submit', async function(e
       status.className = 'form-status success';
       status.innerHTML = '<strong>Got it.</strong> Your result is on its way to Julie. Expect a reply within two working days.';
     } else {
-      const result = await response.json();
-      const msg = (result.errors && result.errors.length)
-        ? result.errors.map(e => e.message).join(', ')
-        : 'Something went wrong. Please email julie@juliehendry.com directly.';
+      // Surface Formspree's actual reason. Field validation comes back as an
+      // "errors" array; account/quota problems (limit reached, form paused,
+      // reCAPTCHA required) come back as a singular "error" string. Fall back
+      // to a generic message only if the body isn't the JSON we expect.
+      let msg = 'Something went wrong. Please email julie@juliehendry.com directly.';
+      try {
+        const result = await response.json();
+        if (result.errors && result.errors.length) {
+          msg = result.errors.map(e => e.message).join(', ');
+        } else if (result.error) {
+          msg = result.error;
+        }
+      } catch (_) { /* non-JSON response; keep the generic message */ }
       status.className = 'form-status error';
       status.textContent = msg;
       submitBtn.disabled = false;
