@@ -77,6 +77,24 @@ h1, h2, h3, h4 {
 a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--accent-light); }
 
+/* Inline prose links: underline so they stand out from body text.
+   Structural links (nav, buttons, .work-link, cards) keep their own affordance. */
+main p a:not(.work-link):not(.btn),
+main li a:not(.work-link):not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent-light);
+}
+main p a:not(.work-link):not(.btn):hover,
+main li a:not(.work-link):not(.btn):hover {
+  text-decoration-color: var(--accent);
+}
+.section-dark p a:not(.work-link):not(.btn),
+.section-dark li a:not(.work-link):not(.btn) { color: #cbd5e1; text-decoration-color: #94a3b8; }
+.section-dark p a:not(.work-link):not(.btn):hover,
+.section-dark li a:not(.work-link):not(.btn):hover { color: #f1f5f9; text-decoration-color: #e5e7eb; }
+
 /* Focus Visible */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--accent);
