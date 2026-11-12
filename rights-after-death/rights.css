@@ -114,6 +114,9 @@ article h3 { font-size: 1.1rem; margin: 2rem 0 0.75rem; color: var(--text); }
 
 .rad-lead { font-size: 1.2rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
 
+/* Long email addresses and URLs must wrap rather than push the page sideways on phones */
+article { overflow-wrap: break-word; }
+
 article p { margin-bottom: 1.25rem; }
 article ul, article ol { margin: 0 0 1.25rem 1.4rem; }
 article li { margin-bottom: 0.6rem; }
@@ -166,7 +169,7 @@ article strong { color: var(--text); font-weight: 600; }
   font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
   padding-top: 0.1rem;
 }
-.rad-facts .v { flex: 1; color: var(--text); }
+.rad-facts .v { flex: 1; min-width: 0; color: var(--text); }
 
 /* Guide index (landing + footer of each page) */
 .rad-guides {
@@ -235,6 +238,6 @@ article strong { color: var(--text); font-weight: 600; }
   article h1 { font-size: 1.75rem; }
   .rad-intro h1 { font-size: 1.9rem; }
   .rad-facts li { flex-direction: column; gap: 0.2rem; }
-  .rad-facts .k { flex-basis: auto; }
+  .rad-facts .k, .rad-board .rad-facts .k { flex-basis: auto; }
   .footer-inner, .rad-footer-inner { flex-direction: column; }
 }
