@@ -35,6 +35,7 @@ CTO and co-founder of beò (beo.llc). Author of CHART, an openly published AI go
 - [CHART](https://juliehendry.com/chart.html): the AI governance framework she brings to mandates that need it
 - [About](https://juliehendry.com/about.html): full career timeline and credentials
 - [Writing](https://juliehendry.com/writing.html): selected writing on technology and organisations
+- [The Override Nobody Uses](https://juliehendry.com/the-override-nobody-uses.html): article on speaking up and whistleblowing as AI takes on decisions, following a BCS conversation with Google Walkout organiser Claire Stapleton
 - [The Oversight Window](https://juliehendry.com/the-oversight-window.html): practitioner white paper on the EU AI Act's deferred high-risk obligations, including Article 14 human oversight (December 2027 for standalone systems, August 2028 for AI in regulated products) and how to use the readiness window
 - [Discovery Extinction](https://juliehendry.com/discovery-extinction.html): article on the AI risk nobody is measuring
 - [Contact](https://juliehendry.com/contact.html): enquiry form for interim, fractional and permanent technology leadership roles, consulting, and research
