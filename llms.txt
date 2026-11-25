@@ -36,7 +36,7 @@ Fractional CTO at beò (beo.llc). Author of CHART, an openly published framework
 - [About](https://juliehendry.com/about.html): full career timeline and credentials
 - [Writing](https://juliehendry.com/writing.html): selected writing on technology and organisations
 - [The Override Nobody Uses](https://juliehendry.com/the-override-nobody-uses.html): article on speaking up and whistleblowing as AI takes on decisions, following a BCS conversation with Google Walkout organiser Claire Stapleton
-- [The Oversight Window](https://juliehendry.com/the-oversight-window.html): practitioner white paper on the EU AI Act's deferred high-risk obligations, including Article 14 human oversight (December 2027 for standalone systems, August 2028 for AI in regulated products) and how to use the readiness window
+- [The Oversight Window](https://juliehendry.com/the-oversight-window.html): practitioner white paper (revised November 2026) on the EU AI Act's deferred high-risk obligations (December 2027 for standalone systems, August 2028 for AI in regulated products), the deployer's oversight duties under Article 26, and how to use the readiness window
 - [Discovery Extinction](https://juliehendry.com/discovery-extinction.html): article on the AI risk nobody is measuring
 - [Contact](https://juliehendry.com/contact.html): email and contact form
 - Written evidence (lead author, BCS ICT Ethics Specialist Group) to the House of Commons Education Committee inquiry on AI and EdTech in education, May 2026, AIE0137: https://committees.parliament.uk/writtenevidence/165068/html/
