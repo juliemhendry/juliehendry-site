@@ -85,7 +85,7 @@
 
       <h2>Why this framework, why now</h2>
       <p>The EU AI Act places human oversight at the centre of governance for high-risk AI: providers must design systems so they can be overseen (Article 14), and deployers must use them in line with the provider's instructions for use, including its oversight measures (Article 26(1)), and assign oversight to people with the necessary competence, training and authority (Article 26(2)). CHART works on the deployer side: whether that assignment is real or nominal. Under the Digital Omnibus, Regulation (EU) 2026/1744, formally adopted on 29 June 2026, those high-risk obligations apply from 2 December 2027 for standalone systems and 2 August 2028 for AI embedded in regulated products. The stated reason for the delay was that the harmonised standards and guidance needed to comply were not ready. The delay is not a reprieve; it is the readiness window. But "human in the loop" is still being treated as a compliance checkbox, not a cognitive reality.</p>
-      <p>No commercial assessment tool asks the question CHART answers: are the humans in your AI systems actually capable of exercising the judgment you are relying on them for? The existing maturity models come from one discipline each: IAPP from privacy law, IEEE from engineering, ISACA from audit, CMMI from process. None starts from what happens to human thinking when you put AI in the room. CHART sits at the intersection of three domains rarely held by the same person: enterprise technology transformation, the psychology of human cognition, and AI ethics and governance.</p>
+      <p>I have not found a commercial assessment tool that asks the question CHART asks: are the humans in your AI systems actually capable of exercising the judgment you are relying on them for? The existing maturity models come from one discipline each: IAPP from privacy law, IEEE from engineering, ISACA from audit, CMMI from process. None starts from what happens to human thinking when you put AI in the room. CHART sits at the intersection of three domains rarely held by the same person: enterprise technology transformation, the psychology of human cognition, and AI ethics and governance.</p>
     </div>
   </section>
 
@@ -93,6 +93,7 @@
     <div class="container narrow">
       <h2>The five dimensions</h2>
       <p>Each dimension has five levels. Level claims are meant to be supported by evidence, not aspiration.</p>
+      <p>A note on the higher levels. Some of the practices named at levels 4 and 5, such as cognitive forcing, scheduled breaks, task rotation and periodic independent-decision exercises, come from research on attention, automation bias and skill retention. Their effect on AI oversight specifically has not yet been tested. They are included as reasonable practice, not as proven controls.</p>
 
       <h3>1. Cognitive Readiness</h3>
       <p class="fw-question">Do people in this organisation understand how AI changes the way they think, decide, and act?</p>
@@ -122,7 +123,7 @@
 
       <h3>3. Organisational Honesty</h3>
       <p class="fw-question">Does this organisation know what it does not know about its AI systems, and can it say so?</p>
-      <p>In thirty years of enterprise technology delivery, the single strongest predictor of programme failure is not technical complexity. It is the gap between what an organisation says about its readiness and what is actually true. AI amplifies this because the technology is impressive enough to mask governance gaps: tool deployments create visibility without capability, and pilot successes generate confidence without scalability. Psychological safety is the precondition for honest self-assessment (Edmondson, 1999), and one study has linked AI adoption to lower psychological safety (Kim, Kim &amp; Lee, 2025).</p>
+      <p>In thirty years of enterprise technology delivery, what I have seen sink more work than technical complexity is the gap between what an organisation says about its readiness and what is actually true. AI amplifies this because the technology is impressive enough to mask governance gaps: tool deployments create visibility without capability, and pilot successes generate confidence without scalability. Psychological safety is the precondition for honest self-assessment (Edmondson, 1999), and one study has linked AI adoption to lower psychological safety (Kim, Kim &amp; Lee, 2025).</p>
       <table class="fw-table">
         <tr><th>Level</th><th>Description</th></tr>
         <tr><td>1. Performative</td><td>AI governance exists on paper. Policies satisfy regulators or boards but do not reflect practice. Self-assessment scores do not match operational reality.</td></tr>
@@ -148,7 +149,7 @@
 
       <h3>5. Accountability Architecture</h3>
       <p class="fw-question">When something goes wrong with an AI system, does this organisation know who is responsible, and would that person agree?</p>
-      <p>Accountability diffusion is the silent governance crisis of AI. When an AI-assisted process produces a bad outcome, accountability fragments across the data team, the model builders, the deployers, the oversight committee, the board, and the individual who clicked "approve". The scale is documented: two-thirds of CIOs and CTOs surveyed said they are held accountable for AI systems they do not fully control, and 77% of organisations reported AI adoption outpacing their governance capability (IBM Institute for Business Value with Oxford Economics, 2026, survey of 2,000 senior technology executives). Santoni de Sio (2021) identifies four distinct responsibility gaps, culpability, moral accountability, public accountability, and active responsibility, which can exist independently.</p>
+      <p>Accountability diffusion is an under-examined governance problem in AI. When an AI-assisted process produces a bad outcome, accountability fragments across the data team, the model builders, the deployers, the oversight committee, the board, and the individual who clicked "approve". The scale is documented: two-thirds of CIOs and CTOs surveyed said they are held accountable for AI systems they do not fully control, and 77% of organisations reported AI adoption outpacing their governance capability (IBM Institute for Business Value with Oxford Economics, 2026, survey of 2,000 senior technology executives). Santoni de Sio (2021) identifies four distinct responsibility gaps, culpability, moral accountability, public accountability, and active responsibility, which can exist independently.</p>
       <table class="fw-table">
         <tr><th>Level</th><th>Description</th></tr>
         <tr><td>1. Diffuse</td><td>Nobody is clearly accountable for AI outcomes. Responsibility is distributed across teams, committees and policies until it belongs to no one. All four responsibility gaps are open.</td></tr>
@@ -165,7 +166,7 @@
     <div class="container narrow">
       <h2>How the dimensions interact</h2>
       <p>The five dimensions are interdependent, and assessments that treat them in isolation miss the systemic failure modes. Automation bias (Cognitive Readiness) determines whether decision architectures function as designed: well-designed override mechanisms are performative if people are cognitively disposed to defer. The overestimation problem (Organisational Honesty) is amplified by accountability diffusion: when nobody is personally accountable for the accuracy of governance assessments, there is no incentive to be honest about gaps. Workers experiencing AI-related anxiety and identity threat engage less critically with AI output, undermining the sustained attention that oversight requires. And the Act splits oversight duties between providers and deployers, which leaves room for ambiguity over who is responsible.</p>
-      <p>These interactions explain why single-dimension assessments, technical maturity scores, compliance checklists, AI literacy surveys, consistently fail to predict governance outcomes.</p>
+      <p>These interactions are why a single-dimension assessment, whether a technical maturity score, a compliance checklist or an AI literacy survey, is unlikely to give the full picture on its own.</p>
 
       <h2>How assessment works</h2>
       <p>CHART is designed to be delivered as a structured external assessment, not a self-assessment questionnaire, for the reason Dimension 3 exists: organisations systematically overstate their own readiness. A full assessment combines documentary review, structured interviews across three organisational layers (what leadership believes, what management implements, what actually happens at the frontline), gap analysis between documented governance and observed practice, evidence-based dimension scoring, and a prioritised recommendations report. It is delivered as a half-day leadership readout plus a detailed written report. The assessment protocol, scoring and calibration are not published.</p>
@@ -174,14 +175,15 @@
       <h2>Compatibility with existing standards</h2>
       <table class="fw-table">
         <tr><th>Standard</th><th>Relationship</th></tr>
-        <tr><td>ISO 42001</td><td>CHART assesses the human dimensions that ISO 42001 requires but does not prescribe how to evaluate.</td></tr>
+        <tr><td>ISO 42001</td><td>ISO 42001 sets requirements for competence, awareness and roles within an AI management system. CHART offers one way to assess the people side of those in more depth.</td></tr>
         <tr><td>EU AI Act</td><td>Supports deployers in evidencing Article 26(1) and 26(2): that the people assigned to oversight have the competence, training and authority the Act requires, and that oversight is exercised in practice, not only documented. It does not assess the provider's Article 14 design obligations.</td></tr>
-        <tr><td>NIST AI RMF</td><td>Adds the human behaviour layer that NIST's "human-AI teaming" category acknowledges but does not operationalise.</td></tr>
+        <tr><td>NIST AI RMF</td><td>The NIST AI RMF addresses human oversight roles and human-AI configuration. CHART offers an organisational assessment of how those work in practice.</td></tr>
         <tr><td>CMMI</td><td>Shares the five-level maturity structure deliberately, so organisations familiar with maturity assessment can adopt CHART without learning a new paradigm.</td></tr>
       </table>
 
       <h2>What this is not</h2>
       <p>This is not an AI ethics certification, a course, a set of principles, or a compliance checklist. It is a diagnostic framework for assessing how well an organisation's humans are actually governing its AI. The distinction matters: principles tell you what good looks like. CHART tells you how far away you are and why.</p>
+      <p>CHART has not yet been independently validated. The levels are a structured judgement supported by evidence gathered in the assessment. They are not a psychometric scale, and CHART does not test individuals.</p>
 
       <h2>Provenance</h2>
       <p class="fw-meta">CHART is the work of Julie Hendry and draws on thirty years of enterprise technology transformation across government (GDS, ESFA, Cabinet Office, HMRC), financial services (JP Morgan, American Express, Barclays, SunGard), life sciences (Abcam), retail (Travis Perkins, Tesco) and media (BBC, Sky, The Guardian); an MSc in Psychology (Distinction) from the University of Strathclyde with research on technology's cognitive impact; a pre-registered research study on digital self-control (be&ograve; LLC, OSF, 2026); the Treasurership of the BCS ICT Ethics Specialist Group; and a pan-government published governance framework for agile service delivery. The research behind CHART is available as an SSRN preprint, not peer reviewed (<a href="https://doi.org/10.2139/ssrn.6786758">DOI: 10.2139/ssrn.6786758</a>). First drafted 16 May 2026. &copy; Julie Hendry 2026. Openly published for use and citation with attribution; the name CHART and the assessment methodology remain the property of Julie Hendry.</p>
