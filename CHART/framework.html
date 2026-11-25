@@ -36,8 +36,9 @@
     "author": { "@type": "Person", "name": "Julie Hendry", "url": "https://juliehendry.com" },
     "datePublished": "2026-08-12",
     "dateCreated": "2026-05-16",
+    "dateModified": "2026-11-25",
     "url": "https://juliehendry.com/CHART/framework.html",
-    "about": ["AI governance", "EU AI Act Article 14", "human oversight", "AI maturity model"]
+    "about": ["AI governance", "EU AI Act Article 26", "human oversight", "AI maturity model"]
   }
   </script>
   <!-- Google Analytics with cookie consent -->
@@ -72,7 +73,7 @@
       <div class="label">CHART &middot; The framework, openly published</div>
       <h1>Cognitive Health Assessment for Responsible Technology</h1>
       <p class="lead">A human-centred AI maturity framework. Five dimensions, five levels, each anchored in human behaviour rather than technical capability.</p>
-      <p class="fw-meta">Julie Hendry, MSc Psychology (Distinction), FBCS. First drafted 16 May 2026; this published edition August 2026. <a href="/CHART/CHART-framework.pdf">Download as PDF</a> &middot; <a href="/CHART/self-assessment.html">Free 15-question self-assessment</a></p>
+      <p class="fw-meta">Julie Hendry, MSc Psychology (Distinction), FBCS. First drafted 16 May 2026; this edition revised 25 November 2026. <a href="/CHART/CHART-framework.pdf">Download as PDF</a> &middot; <a href="/CHART/self-assessment.html">Free 15-question self-assessment</a></p>
     </div>
   </header>
 
@@ -83,7 +84,7 @@
       <p>The established AI maturity models start from the technology and work outward. CHART starts from the human and works inward.</p>
 
       <h2>Why this framework, why now</h2>
-      <p>The EU AI Act places human oversight at the centre of governance for high-risk AI: providers must design for it (Article 14) and deployers must assign it to people with the competence, training and authority to exercise it (Article 26(2)). Under the Digital Omnibus, Regulation (EU) 2026/1744, formally adopted on 29 June 2026, those high-risk obligations apply from 2 December 2027 for standalone systems and 2 August 2028 for AI embedded in regulated products. Brussels delayed the obligations because the standards and guidance organisations needed to comply were not ready. The delay is not a reprieve; it is the readiness window. But "human in the loop" is still being treated as a compliance checkbox, not a cognitive reality.</p>
+      <p>The EU AI Act places human oversight at the centre of governance for high-risk AI: providers must design systems so they can be overseen (Article 14), and deployers must use them in line with the provider's instructions for use, including its oversight measures (Article 26(1)), and assign oversight to people with the necessary competence, training and authority (Article 26(2)). CHART works on the deployer side: whether that assignment is real or nominal. Under the Digital Omnibus, Regulation (EU) 2026/1744, formally adopted on 29 June 2026, those high-risk obligations apply from 2 December 2027 for standalone systems and 2 August 2028 for AI embedded in regulated products. The stated reason for the delay was that the harmonised standards and guidance needed to comply were not ready. The delay is not a reprieve; it is the readiness window. But "human in the loop" is still being treated as a compliance checkbox, not a cognitive reality.</p>
       <p>No commercial assessment tool asks the question CHART answers: are the humans in your AI systems actually capable of exercising the judgment you are relying on them for? The existing maturity models come from one discipline each: IAPP from privacy law, IEEE from engineering, ISACA from audit, CMMI from process. None starts from what happens to human thinking when you put AI in the room. CHART sits at the intersection of three domains rarely held by the same person: enterprise technology transformation, the psychology of human cognition, and AI ethics and governance.</p>
     </div>
   </section>
@@ -108,7 +109,7 @@
 
       <h3>2. Decision Architecture</h3>
       <p class="fw-question">When AI is involved in a decision, can you trace who actually decided, what the human contributed, and whether the human could meaningfully have overridden the system?</p>
-      <p>"Human in the loop" is a governance fiction in most organisations: the human is in the loop the way a rubber stamp is in the loop. The literature reveals a dual failure mode. Algorithm aversion (Dietvorst et al., 2015) causes disproportionate penalising of AI errors and unwarranted overrides; algorithm appreciation causes uncritical deference. Effective decision architecture must account for both, and analyses by Fink (2025) and Carnat (2024) argue that the effectiveness Article 14 assumes is undermined by well-documented cognitive limits such as automation bias.</p>
+      <p>In many organisations "human in the loop" is a governance fiction: the human is in the loop the way a rubber stamp is in the loop. The literature reveals a dual failure mode. Algorithm aversion (Dietvorst et al., 2015) causes disproportionate penalising of AI errors and unwarranted overrides; algorithm appreciation causes uncritical deference. Effective decision architecture must account for both, and analyses by Fink (2025) and Carnat (2024) argue that the effectiveness the Act's oversight provisions assume is undermined by well-documented cognitive limits such as automation bias. The Act itself requires that overseers be enabled to remain aware of automation bias (Article 14(4)(b)).</p>
       <table class="fw-table">
         <tr><th>Level</th><th>Description</th></tr>
         <tr><td>1. Opaque</td><td>No clarity on where AI recommendations end and human decisions begin.</td></tr>
@@ -117,11 +118,11 @@
         <tr><td>4. Exercised</td><td>Overrides happen in practice, not just in policy. There is evidence of humans disagreeing with AI and that disagreement being respected. Understanding and genuine ability to intervene are both met, and override patterns are analysed for aversion and appreciation biases.</td></tr>
         <tr><td>5. Adaptive</td><td>Decision architecture evolves with outcomes. Override accuracy is measured. Where humans consistently override correctly, the system learns; where AI consistently outperforms, the human role shifts to exception handling with full cognitive support. Human oversight can be demonstrated to regulators as a cognitive reality, not a compliance fiction.</td></tr>
       </table>
-      <p class="fw-grounding">Grounding: distributed cognition (Hutchins, 1995); joint cognitive systems (Hollnagel &amp; Woods, 2005); meaningful human control (Santoni de Sio &amp; van den Hoven, 2018); algorithm aversion (Dietvorst et al., 2015); EU AI Act Article 14 critique (Fink, 2025; Carnat, 2024).</p>
+      <p class="fw-grounding">Grounding: distributed cognition (Hutchins, 1995); joint cognitive systems (Hollnagel &amp; Woods, 2005); meaningful human control (Santoni de Sio &amp; van den Hoven, 2018); algorithm aversion (Dietvorst et al., 2015); critiques of the EU AI Act's human oversight provisions (Fink, 2025; Carnat, 2024).</p>
 
       <h3>3. Organisational Honesty</h3>
       <p class="fw-question">Does this organisation know what it does not know about its AI systems, and can it say so?</p>
-      <p>In thirty years of enterprise technology delivery, the single strongest predictor of programme failure is not technical complexity. It is the gap between what an organisation says about its readiness and what is actually true. AI amplifies this because the technology is impressive enough to mask governance gaps: tool deployments create visibility without capability, pilot successes generate confidence without scalability, and hype-driven metrics validate both (the "AI Maturity Mirage", Thomas, 2025). Psychological safety is the precondition for honest self-assessment (Edmondson, 1999), and AI adoption itself has been found to damage it (Kim, Kim &amp; Lee, 2025).</p>
+      <p>In thirty years of enterprise technology delivery, the single strongest predictor of programme failure is not technical complexity. It is the gap between what an organisation says about its readiness and what is actually true. AI amplifies this because the technology is impressive enough to mask governance gaps: tool deployments create visibility without capability, pilot successes generate confidence without scalability, and hype-driven metrics validate both (the "AI Maturity Mirage", Thomas, 2025). Psychological safety is the precondition for honest self-assessment (Edmondson, 1999), and one study has linked AI adoption to lower psychological safety (Kim, Kim &amp; Lee, 2025).</p>
       <table class="fw-table">
         <tr><th>Level</th><th>Description</th></tr>
         <tr><td>1. Performative</td><td>AI governance exists on paper. Policies satisfy regulators or boards but do not reflect practice. Self-assessment scores do not match operational reality.</td></tr>
@@ -147,7 +148,7 @@
 
       <h3>5. Accountability Architecture</h3>
       <p class="fw-question">When something goes wrong with an AI system, does this organisation know who is responsible, and would that person agree?</p>
-      <p>Accountability diffusion is the silent governance crisis of AI. When an AI-assisted process produces a bad outcome, accountability fragments across the data team, the model builders, the deployers, the oversight committee, the board, and the individual who clicked "approve". The scale is documented: 67% of CIOs and CTOs are held accountable for AI systems they do not fully control, and 77% report AI adoption outpacing their governance capability (IBM Institute for Business Value with Oxford Economics, 2026, survey of 2,000 senior technology executives). Santoni de Sio (2021) identifies four distinct responsibility gaps, culpability, moral accountability, public accountability, and active responsibility, which can exist independently.</p>
+      <p>Accountability diffusion is the silent governance crisis of AI. When an AI-assisted process produces a bad outcome, accountability fragments across the data team, the model builders, the deployers, the oversight committee, the board, and the individual who clicked "approve". The scale is documented: two-thirds of CIOs and CTOs surveyed said they are held accountable for AI systems they do not fully control, and 77% of organisations reported AI adoption outpacing their governance capability (IBM Institute for Business Value with Oxford Economics, 2026, survey of 2,000 senior technology executives). Santoni de Sio (2021) identifies four distinct responsibility gaps, culpability, moral accountability, public accountability, and active responsibility, which can exist independently.</p>
       <table class="fw-table">
         <tr><th>Level</th><th>Description</th></tr>
         <tr><td>1. Diffuse</td><td>Nobody is clearly accountable for AI outcomes. Responsibility is distributed across teams, committees and policies until it belongs to no one. All four responsibility gaps are open.</td></tr>
@@ -174,7 +175,7 @@
       <table class="fw-table">
         <tr><th>Standard</th><th>Relationship</th></tr>
         <tr><td>ISO 42001</td><td>CHART assesses the human dimensions that ISO 42001 requires but does not prescribe how to evaluate.</td></tr>
-        <tr><td>EU AI Act</td><td>Directly supports Article 14 and Article 26(2) compliance by assessing whether human oversight is cognitive reality or governance fiction.</td></tr>
+        <tr><td>EU AI Act</td><td>Supports deployers in evidencing Article 26(1) and 26(2): that the people assigned to oversight have the competence, training and authority the Act requires, and that oversight is exercised in practice, not only documented. It does not assess the provider's Article 14 design obligations.</td></tr>
         <tr><td>NIST AI RMF</td><td>Adds the human behaviour layer that NIST's "human-AI teaming" category acknowledges but does not operationalise.</td></tr>
         <tr><td>CMMI</td><td>Shares the five-level maturity structure deliberately, so organisations familiar with maturity assessment can adopt CHART without learning a new paradigm.</td></tr>
       </table>
@@ -183,7 +184,7 @@
       <p>This is not an AI ethics certification, a course, a set of principles, or a compliance checklist. It is a diagnostic framework for assessing how well an organisation's humans are actually governing its AI. The distinction matters: principles tell you what good looks like. CHART tells you how far away you are and why.</p>
 
       <h2>Provenance</h2>
-      <p class="fw-meta">CHART is the work of Julie Hendry and draws on thirty years of enterprise technology transformation across government (GDS, ESFA, Cabinet Office, HMRC), financial services (JP Morgan, American Express, Barclays, SunGard), life sciences (Abcam), retail (Travis Perkins, Tesco) and media (BBC, Sky, The Guardian); an MSc in Psychology (Distinction) from the University of Strathclyde with research on technology's cognitive impact; a pre-registered research study on digital self-control (be&ograve; LLC, OSF, 2026); the Treasurership of the BCS ICT Ethics Specialist Group; and a pan-government published governance framework for agile service delivery. The research behind CHART is published as an SSRN preprint (<a href="https://doi.org/10.2139/ssrn.6786758">DOI: 10.2139/ssrn.6786758</a>). First drafted 16 May 2026. &copy; Julie Hendry 2026. Openly published for use and citation with attribution; the name CHART and the assessment methodology remain the property of Julie Hendry.</p>
+      <p class="fw-meta">CHART is the work of Julie Hendry and draws on thirty years of enterprise technology transformation across government (GDS, ESFA, Cabinet Office, HMRC), financial services (JP Morgan, American Express, Barclays, SunGard), life sciences (Abcam), retail (Travis Perkins, Tesco) and media (BBC, Sky, The Guardian); an MSc in Psychology (Distinction) from the University of Strathclyde with research on technology's cognitive impact; a pre-registered research study on digital self-control (be&ograve; LLC, OSF, 2026); the Treasurership of the BCS ICT Ethics Specialist Group; and a pan-government published governance framework for agile service delivery. The research behind CHART is available as an SSRN preprint, not peer reviewed (<a href="https://doi.org/10.2139/ssrn.6786758">DOI: 10.2139/ssrn.6786758</a>). First drafted 16 May 2026. &copy; Julie Hendry 2026. Openly published for use and citation with attribution; the name CHART and the assessment methodology remain the property of Julie Hendry.</p>
       <p class="fw-meta">Cite as: Hendry, J. (2026). <em>CHART: Cognitive Health Assessment for Responsible Technology.</em> juliehendry.com/CHART/framework.html</p>
     </div>
   </section>
